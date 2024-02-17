@@ -1,0 +1,19 @@
+{
+    "name": "沪深300指数",
+    "code": "000300",
+    "type": "index",
+    "market_data": [
+        {
+            "date": "2016-01-04",
+            "pre_close": 3539.18,
+            "open": 2932.87,
+            "high": 2933.39,
+            "low": 2927.84,
+            "close": 2929.57,
+            "change": -309.61,
+            "change_percent": -8.75,
+            "trading_volume": 0,
+            "trading_value": 0
+        }
+    ]
+}
