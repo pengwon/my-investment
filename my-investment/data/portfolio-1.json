@@ -1,0 +1,76 @@
+{
+    "name": "passive-1",
+    "index_code": [
+        "000300",
+        "000905",
+        "000688",
+        "899050"
+    ],
+    "fund_code": [
+        "007339",
+        "007029",
+        "011609",
+        "017516",
+        "014533"
+    ],
+    "start_date": "2024-02-19",
+    "start_money": 100000,
+    "change_records": [
+        {
+            "date": "2024-02-19",
+            "balance": 100000,
+            "fund_total": 0,
+            "fund_detail": [
+                {
+                    "fund_code": "007339",
+                    "value": 0,
+                    "share": 0,
+                    "price": 0
+                },
+                {
+                    "fund_code": "007029",
+                    "value": 0,
+                    "share": 0,
+                    "price": 0
+                },
+                {
+                    "fund_code": "011609",
+                    "value": 0,
+                    "share": 0,
+                    "price": 0
+                },
+                {
+                    "fund_code": "017516",
+                    "value": 0,
+                    "share": 0,
+                    "price": 0
+                },
+                {
+                    "fund_code": "014533",
+                    "value": 0,
+                    "share": 0,
+                    "price": 0
+                }
+            ]
+        }
+    ],
+    "trade_records": [
+        {
+            "date": "2024-02-19",
+            "fund_code": "007339",
+            "trade_money": 20000,
+            "balance": 80000,
+            "fund_total": 20000,
+            "trade_detail": [
+                {
+                    "fund_code": "007339",
+                    "trade_type": "buy",
+                    "trade_money": 20000,
+                    "trade_share": 0,
+                    "trade_price": 0,
+                    "trade_fee": 0
+                }
+            ]
+        }
+    ]
+}
