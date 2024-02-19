@@ -1,0 +1,39 @@
+name: Update portfolio-1 data
+
+on:
+    schedule:
+        - cron: '0 12 * * 1-5'  # 每周一到周五的UTC时间12点（东八区时间20点）执行
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Checkout
+            uses: actions/checkout@v4
+
+        - name: Set up Python
+            uses: actions/setup-python@v5
+            with:
+                python-version: '3.x'
+                cache: 'pip'
+
+        - name: Install dependencies
+            run: |
+                python -m pip install --upgrade pip
+                pip install -r requirements.txt
+
+        - name: Run portfolio-1.py
+            run: python portfolio-1.py
+            working-directory: my-investment/portfolio
+
+        - name: Commit and push if it changed
+            run: |
+                git config --local user.email "action@github.com"
+                git config --local user.name "GitHub Action"
+                git add -A
+                if git diff --quiet HEAD; then
+                    echo "No changes to commit"
+                else
+                    git commit -m "Update data"
+                    git push
