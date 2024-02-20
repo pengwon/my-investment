@@ -122,6 +122,28 @@ def update_fund_data(fund_code: str, date: str):
             json.dump(fund_data, f)
             f.truncate()
 
+    return new_data
+
+
+def update_portfolio_data(fund_data: dict, date: str):
+    file_path = f"../data/portfolio-1.json"
+    with open(file_path, "r+", encoding="utf-8") as f:
+        portfolio_data = json.load(f)
+        # 查找给定日期的数据
+        for item in portfolio_data["change_records"]:
+            if item["date"] == date:
+                # 如果找到了，更新数据
+                item.update(new_data)
+                break
+        else:
+            # 如果没有找到，添加新的数据
+            portfolio_data["market_data"].append(new_data)
+
+        # 将修改后的数据写回文件
+        f.seek(0)
+        json.dump(portfolio_data, f)
+        f.truncate()
+
 
 def get_fund_data(fund_code: str, date: str):
     if fund_code != "014533":
@@ -174,20 +196,42 @@ def update_market_data():
 
     if is_trade_day(current_date):
 
-        with open("../data/portfolio-1.json", "r") as file:
-            data = json.load(file)
+        with open("../data/portfolio-1.json", "r+") as file:
+            portfolio_data = json.load(file)
 
-        # 获取 index_code 和 fund_code
-        index_codes = data["index_code"]
-        fund_codes = data["fund_code"]
+            # 获取 index_code 和 fund_code
+            index_codes = portfolio_data["index_code"]
+            fund_codes = portfolio_data["fund_code"]
 
-        # 对于每个 index_code，修改相应的 JSON 文件
-        for index_code in index_codes:
-            update_index_data(index_code, current_date)
+            # 对于每个 index_code，修改相应的 JSON 文件
+            for index_code in index_codes:
+                update_index_data(index_code, current_date)
 
-        # 对于每个 fund_code，修改相应的 JSON 文件
-        for fund_code in fund_codes:
-            update_fund_data(fund_code, current_date)
+            # 对于每个 fund_code，修改相应的 JSON 文件
+            for fund_code in fund_codes:
+                fund_data = update_fund_data(fund_code, current_date)
+                fund_data["fund_code"] = fund_code
+                
+                for item in portfolio_data["change_records"][-1]["fund_detail"]:
+                    if item["fund_code"] == fund_code:
+                        # 如果找到了，更新数据
+                        fund_data["share"] = item["share"]
+                        break
+                
+                for item in portfolio_data["trade_records"][-1]["trade_detail"]:
+                    if item["fund_code"] == fund_code:
+                        # 如果找到了，更新数据
+                        if item["trade_type"] == "buy":
+                            fund_data["share"] += item["cost"]
+                        elif item["trade_type"] == "sell":
+                            fund_data["share"] -= item["cost"]
+                        break
+                
+                portfolio_data["fund_detail"].append(fund_data)
+            # 将修改后的数据写回文件
+            file.seek(0)
+            json.dump(portfolio_data, file)
+            file.truncate()
 
 
 if __name__ == "__main__":
