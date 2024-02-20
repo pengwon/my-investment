@@ -2,7 +2,7 @@ name: Update portfolio-1 data
 
 on:
   schedule:
-    - cron: '0 12 * * 1-5'  # 每周一到周五的UTC时间12点（东八区时间20点）执行
+    - cron: '8 12 * * 1-5'  # 每周一到周五的UTC时间12点（东八区时间20点）执行
 
 jobs:
   build:

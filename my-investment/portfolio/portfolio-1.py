@@ -227,11 +227,11 @@ def update_market_data():
                             fund_data["share"] -= item["cost"]
                         break
                 
-                portfolio_data["fund_detail"].append(fund_data)
-            # 将修改后的数据写回文件
-            file.seek(0)
-            json.dump(portfolio_data, file)
-            file.truncate()
+            #     portfolio_data["fund_detail"].append(fund_data)
+            # # 将修改后的数据写回文件
+            # file.seek(0)
+            # json.dump(portfolio_data, file)
+            # file.truncate()
 
 
 if __name__ == "__main__":
