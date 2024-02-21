@@ -102,7 +102,7 @@ def update_fund_data(fund_code: str, date: str):
         "span", {"class": re.compile(r"ui-font-middle ui-color-(red|green) ui-num")}
     )[0].text
 
-    if data_date == date:
+    if data_date == "2024-02-20":
         new_data = {"date": date, "unit_value": unit_value, "growth_rate": growth_rate}
         file_path = f"../data/{fund_code}.json"
         with open(file_path, "r+", encoding="utf-8") as f:
@@ -122,7 +122,11 @@ def update_fund_data(fund_code: str, date: str):
             json.dump(fund_data, f)
             f.truncate()
 
-    return new_data
+        return new_data
+    
+    else:
+        print(f"The date of the data is not {date}.")
+        return None
 
 
 def update_portfolio_data(fund_data: dict, date: str):
@@ -210,22 +214,22 @@ def update_market_data():
             # 对于每个 fund_code，修改相应的 JSON 文件
             for fund_code in fund_codes:
                 fund_data = update_fund_data(fund_code, current_date)
-                fund_data["fund_code"] = fund_code
+                # fund_data["fund_code"] = fund_code
                 
-                for item in portfolio_data["change_records"][-1]["fund_detail"]:
-                    if item["fund_code"] == fund_code:
-                        # 如果找到了，更新数据
-                        fund_data["share"] = item["share"]
-                        break
+                # for item in portfolio_data["change_records"][-1]["fund_detail"]:
+                #     if item["fund_code"] == fund_code:
+                #         # 如果找到了，更新数据
+                #         fund_data["share"] = item["share"]
+                #         break
                 
-                for item in portfolio_data["trade_records"][-1]["trade_detail"]:
-                    if item["fund_code"] == fund_code:
-                        # 如果找到了，更新数据
-                        if item["trade_type"] == "buy":
-                            fund_data["share"] += item["cost"]
-                        elif item["trade_type"] == "sell":
-                            fund_data["share"] -= item["cost"]
-                        break
+                # for item in portfolio_data["trade_records"][-1]["trade_detail"]:
+                #     if item["fund_code"] == fund_code:
+                #         # 如果找到了，更新数据
+                #         if item["trade_type"] == "buy":
+                #             fund_data["share"] += item["cost"]
+                #         elif item["trade_type"] == "sell":
+                #             fund_data["share"] -= item["cost"]
+                #         break
                 
             #     portfolio_data["fund_detail"].append(fund_data)
             # # 将修改后的数据写回文件

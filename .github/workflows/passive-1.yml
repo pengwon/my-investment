@@ -37,3 +37,5 @@ jobs:
           else
             git commit -m "Update data"
             git push
+          fi
+          
