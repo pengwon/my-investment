@@ -102,7 +102,7 @@ def update_fund_data(fund_code: str, date: str):
         "span", {"class": re.compile(r"ui-font-middle ui-color-(red|green) ui-num")}
     )[0].text
 
-    if data_date == "2024-02-20":
+    if data_date == date:
         new_data = {"date": date, "unit_value": unit_value, "growth_rate": growth_rate}
         file_path = f"../data/{fund_code}.json"
         with open(file_path, "r+", encoding="utf-8") as f:
