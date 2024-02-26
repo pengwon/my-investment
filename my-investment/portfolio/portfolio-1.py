@@ -6,6 +6,9 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 
 
+max_retries = 5
+
+
 def is_trade_day(date: str):
     # 读取 JSON 文件
     with open("../data/trade_day.json", "r") as f:
@@ -23,7 +26,7 @@ def is_trade_day(date: str):
         return False
 
 
-def update_index_data(index_code: str, date: str):
+def update_index_data(index_code: str, date: str, max_retries=5):
     timestamp_ms = int(time.time() * 1000)
     if index_code.startswith("000"):
         url = f"https://push2.eastmoney.com/api/qt/stock/get?invt=2&fltt=1&cb=jQuery35103551041611965715_{timestamp_ms}&secid=1.{index_code}"
@@ -32,24 +35,31 @@ def update_index_data(index_code: str, date: str):
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0"
     }
-    print(url)
-    response = requests.get(url, headers=headers)
+
+    retries = 0
+    while retries < max_retries:
+        try:
+            response = requests.get(url, headers=headers)
+            response.raise_for_status()  # 如果响应状态码不是 200，抛出异常
+            break
+        except requests.exceptions.RequestException as e:
+            print(f"Request failed: {e}. Retrying...")
+            retries += 1
+    else:
+        raise requests.exceptions.RequestException("Max retries exceeded")
+
     response_text = response.content.decode("utf-8")
 
     # 使用正则表达式删除函数调用
     json_text = re.sub(r"^\w+\((.*)\);$", r"\1", response_text)
-    print(json_text)
 
     # 解析 JSON 数据
-    # f43：当前值
-    # f44：最高
-    # f45：最低
-    # f46：今开
-    # f47：成交量（手）
-    # f48：成交额
-    # f60：昨收
-    # f85：流通股
-    data = json.loads(json_text)["data"]
+    try:
+        data = json.loads(json_text)["data"]
+    except json.JSONDecodeError:
+        print("Failed to decode JSON data.")
+        return None
+
     new_data = {
         "date": date,
         "pre_close": data["f60"] / 100,
@@ -63,10 +73,15 @@ def update_index_data(index_code: str, date: str):
         "trading_value": data["f48"],
         "turnover_rate": data["f47"] * 100 / data["f85"] * 100,
     }
-    # Add your code here to update the index data
+
     file_path = f"../data/{index_code}.json"
     with open(file_path, "r+", encoding="utf-8") as f:
-        index_data = json.load(f)
+        try:
+            index_data = json.load(f)
+        except json.JSONDecodeError:
+            print("Failed to decode JSON data.")
+            return None
+
         # 查找给定日期的数据
         for item in index_data["market_data"]:
             if item["date"] == date:
@@ -82,18 +97,35 @@ def update_index_data(index_code: str, date: str):
         json.dump(index_data, f)
         f.truncate()
 
+    return new_data
 
-def update_fund_data(fund_code: str, date: str):
+
+def update_fund_data(fund_code: str, date: str, max_retries=5):
     url = f"https://fund.eastmoney.com/{fund_code}.html"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0"
     }
-    response = requests.get(url, headers=headers)
-    html = response.text
 
+    retries = 0
+    while retries < max_retries:
+        try:
+            response = requests.get(url, headers=headers)
+            response.raise_for_status()  # 如果响应状态码不是 200，抛出异常
+            break
+        except requests.exceptions.RequestException as e:
+            print(f"Request failed: {e}. Retrying...")
+            retries += 1
+    else:
+        raise requests.exceptions.RequestException("Max retries exceeded")
+
+    html = response.text
     soup = BeautifulSoup(html, "html.parser")
 
     data_item_02 = soup.find("dl", {"class": "dataItem02"})
+    if data_item_02 is None:
+        print("Failed to find data item.")
+        return None
+
     data_date = data_item_02.find("dt").text.split(" ")[-1].strip("()")
     unit_value = data_item_02.find(
         "span", {"class": re.compile(r"ui-font-large ui-color-(red|green) ui-num")}
@@ -106,7 +138,12 @@ def update_fund_data(fund_code: str, date: str):
         new_data = {"date": date, "unit_value": unit_value, "growth_rate": growth_rate}
         file_path = f"../data/{fund_code}.json"
         with open(file_path, "r+", encoding="utf-8") as f:
-            fund_data = json.load(f)
+            try:
+                fund_data = json.load(f)
+            except json.JSONDecodeError:
+                print("Failed to decode JSON data.")
+                return None
+
             # 查找给定日期的数据
             for item in fund_data["market_data"]:
                 if item["date"] == date:
@@ -123,9 +160,9 @@ def update_fund_data(fund_code: str, date: str):
             f.truncate()
 
         return new_data
-    
+
     else:
-        print(f"The date of the data is not {date}.")
+        print(f"The date of the data is {data_date}, current is {date}.")
         return None
 
 
@@ -215,13 +252,13 @@ def update_market_data():
             for fund_code in fund_codes:
                 fund_data = update_fund_data(fund_code, current_date)
                 # fund_data["fund_code"] = fund_code
-                
+
                 # for item in portfolio_data["change_records"][-1]["fund_detail"]:
                 #     if item["fund_code"] == fund_code:
                 #         # 如果找到了，更新数据
                 #         fund_data["share"] = item["share"]
                 #         break
-                
+
                 # for item in portfolio_data["trade_records"][-1]["trade_detail"]:
                 #     if item["fund_code"] == fund_code:
                 #         # 如果找到了，更新数据
@@ -230,7 +267,7 @@ def update_market_data():
                 #         elif item["trade_type"] == "sell":
                 #             fund_data["share"] -= item["cost"]
                 #         break
-                
+
             #     portfolio_data["fund_detail"].append(fund_data)
             # # 将修改后的数据写回文件
             # file.seek(0)
