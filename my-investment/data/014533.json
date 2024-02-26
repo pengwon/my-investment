@@ -1,1 +1,31 @@
-{"name": "\u6613\u65b9\u8fbeMSCI\u4e2d\u56fdA50\u4e92\u8054\u4e92\u901aETF\u8054\u63a5C", "code": "014533", "market_data": [{"date": "2024-02-19", "unit_value": "0.7136", "growth_rate": "0.90%"}, {"date": "2024-02-20", "unit_value": "0.7153", "growth_rate": "0.24%"}, {"date": "2024-02-22", "unit_value": "0.7312", "growth_rate": "0.72%"}, {"date": "2024-02-23", "unit_value": "0.7314", "growth_rate": "0.03%"}]}
+{
+    "name": "\u6613\u65b9\u8fbeMSCI\u4e2d\u56fdA50\u4e92\u8054\u4e92\u901aETF\u8054\u63a5C",
+    "code": "014533",
+    "market_data": [
+        {
+            "date": "2024-02-19",
+            "unit_value": "0.7136",
+            "growth_rate": "0.90%"
+        },
+        {
+            "date": "2024-02-20",
+            "unit_value": "0.7153",
+            "growth_rate": "0.24%"
+        },
+        {
+            "date": "2024-02-21",
+            "unit_value": "0.7260",
+            "growth_rate": "1.50%"
+        },
+        {
+            "date": "2024-02-22",
+            "unit_value": "0.7312",
+            "growth_rate": "0.72%"
+        },
+        {
+            "date": "2024-02-23",
+            "unit_value": "0.7314",
+            "growth_rate": "0.03%"
+        }
+    ]
+}

@@ -1,1 +1,36 @@
-{"name": "\u6613\u65b9\u8fbe\u4e2d\u8bc1500ETF\u8054\u63a5C", "code": "007029", "market_data": [{"date": "2024-02-19", "gsz": "1.1877", "gszzl": "-0.16", "gsz_time": "2024-02-19 15:00", "jzrq": "2024-02-08", "dwjz": "1.1896", "unit_value": "1.1877", "growth_rate": "-0.16%"}, {"date": "2024-02-20", "unit_value": "1.1865", "growth_rate": "-0.10%"}, {"date": "2024-02-22", "unit_value": "1.1942", "growth_rate": "0.65%"}, {"date": "2024-02-23", "unit_value": "1.1991", "growth_rate": "0.41%"}]}
+{
+    "name": "\u6613\u65b9\u8fbe\u4e2d\u8bc1500ETF\u8054\u63a5C",
+    "code": "007029",
+    "market_data": [
+        {
+            "date": "2024-02-19",
+            "gsz": "1.1877",
+            "gszzl": "-0.16",
+            "gsz_time": "2024-02-19 15:00",
+            "jzrq": "2024-02-08",
+            "dwjz": "1.1896",
+            "unit_value": "1.1877",
+            "growth_rate": "-0.16%"
+        },
+        {
+            "date": "2024-02-20",
+            "unit_value": "1.1865",
+            "growth_rate": "-0.10%"
+        },
+        {
+            "date": "2024-02-21",
+            "unit_value": "1.1865",
+            "growth_rate": "0.00%"
+        },
+        {
+            "date": "2024-02-22",
+            "unit_value": "1.1942",
+            "growth_rate": "0.65%"
+        },
+        {
+            "date": "2024-02-23",
+            "unit_value": "1.1991",
+            "growth_rate": "0.41%"
+        }
+    ]
+}

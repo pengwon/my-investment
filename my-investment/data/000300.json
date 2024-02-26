@@ -1,1 +1,72 @@
-{"name": "\u6caa\u6df1300\u6307\u6570", "code": "000300", "type": "index", "market_data": [{"date": "2024-02-19", "pre_close": 3364.93, "open": 3393.19, "high": 3403.81, "low": 3364.14, "close": 3403.81, "change": 38.88, "change_percent": 1.155447513024045, "trading_volume": 183319800, "trading_value": 267674145147.3, "turnover_rate": 0.5921261514852131}, {"date": "2024-02-20", "pre_close": 3403.81, "open": 3395.19, "high": 3415.89, "low": 3380.1, "close": 3410.85, "change": 7.04, "change_percent": 0.20682705556420597, "trading_volume": 140734581, "trading_value": 218459281946.0, "turnover_rate": 0.4545074774789908}, {"date": "2024-02-22", "pre_close": 3456.87, "open": 3450.35, "high": 3486.68, "low": 3448.41, "close": 3486.67, "change": 29.8, "change_percent": 0.8620515090240594, "trading_volume": 141020784, "trading_value": 225098128872.7, "turnover_rate": 0.45543108783508196}, {"date": "2024-02-23", "pre_close": 3486.67, "open": 3491.34, "high": 3507.56, "low": 3472.97, "close": 3489.74, "change": 3.07, "change_percent": 0.08804962901565104, "trading_volume": 144821273, "trading_value": 232926057113.9, "turnover_rate": 0.4676965209772345}]}
+{
+    "name": "\u6caa\u6df1300\u6307\u6570",
+    "code": "000300",
+    "type": "index",
+    "market_data": [
+        {
+            "date": "2024-02-19",
+            "pre_close": 3364.93,
+            "open": 3393.19,
+            "high": 3403.81,
+            "low": 3364.14,
+            "close": 3403.81,
+            "change": 38.88,
+            "change_percent": 1.155447513024045,
+            "trading_volume": 183319800,
+            "trading_value": 267674145147.3,
+            "turnover_rate": 0.5921261514852131
+        },
+        {
+            "date": "2024-02-20",
+            "pre_close": 3403.81,
+            "open": 3395.19,
+            "high": 3415.89,
+            "low": 3380.1,
+            "close": 3410.85,
+            "change": 7.04,
+            "change_percent": 0.20682705556420597,
+            "trading_volume": 140734581,
+            "trading_value": 218459281946.0,
+            "turnover_rate": 0.4545074774789908
+        },
+        {
+            "date": "2024-02-21",
+            "pre_close": 3410.85,
+            "open": 3390.36,
+            "high": 3500.13,
+            "low": 3383.69,
+            "close": 3456.87,
+            "change": 46.02,
+            "change_percent": 1.3492603507366796,
+            "trading_volume": 189000000,
+            "trading_value": 291824000000.0,
+            "turnover_rate": 0.61
+        },
+        {
+            "date": "2024-02-22",
+            "pre_close": 3456.87,
+            "open": 3450.35,
+            "high": 3486.68,
+            "low": 3448.41,
+            "close": 3486.67,
+            "change": 29.8,
+            "change_percent": 0.8620515090240594,
+            "trading_volume": 141020784,
+            "trading_value": 225098128872.7,
+            "turnover_rate": 0.45543108783508196
+        },
+        {
+            "date": "2024-02-23",
+            "pre_close": 3486.67,
+            "open": 3491.34,
+            "high": 3507.56,
+            "low": 3472.97,
+            "close": 3489.74,
+            "change": 3.07,
+            "change_percent": 0.08804962901565104,
+            "trading_volume": 144821273,
+            "trading_value": 232926057113.9,
+            "turnover_rate": 0.4676965209772345
+        }
+    ]
+}
