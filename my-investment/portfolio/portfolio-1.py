@@ -43,8 +43,8 @@ def update_index_data(index_code: str, date: str, max_retries=5):
             response.raise_for_status()  # 如果响应状态码不是 200，抛出异常
             break
         except requests.exceptions.RequestException as e:
-            print(f"Request failed: {e}. Retrying...")
             retries += 1
+            print(f"Request failed: {e}. Retrying {retries}...")
     else:
         raise requests.exceptions.RequestException("Max retries exceeded")
 
@@ -113,8 +113,8 @@ def update_fund_data(fund_code: str, date: str, max_retries=5):
             response.raise_for_status()  # 如果响应状态码不是 200，抛出异常
             break
         except requests.exceptions.RequestException as e:
-            print(f"Request failed: {e}. Retrying...")
             retries += 1
+            print(f"Request failed: {e}. Retrying {retries}...")
     else:
         raise requests.exceptions.RequestException("Max retries exceeded")
 
