@@ -183,7 +183,7 @@ def update_fund_data(fund_code: str, date: str, max_retries: int = 5):
             fund_data["market_data"].append(new_data)
 
         f.seek(0)
-        json.dump(fund_data, f)
+        json.dump(fund_data, f, indent=4)
         f.truncate()
 
     print(f"Data for {fund_code} on {date} has been updated.")
@@ -262,6 +262,27 @@ def update_trade_records(new_record: dict):
         records.append(new_record)
 
     # 将更新后的交易记录写回文件
+    with open(json_file, "w") as f:
+        json.dump(records, f, indent=4)
+
+
+def update_change_records(new_record: dict):
+    json_file = f"../data/portfolio-1_change_records.json"
+    # 读取现有的持仓数据
+    with open(json_file, "r") as f:
+        records = json.load(f)
+
+    # 检查是否存在相同日期的记录
+    for record in records:
+        if record["date"] == new_record["date"]:
+            # 如果存在，更新记录
+            record.update(new_record)
+            break
+    else:
+        # 如果不存在，添加新的记录
+        records.append(new_record)
+
+    # 将更新后的持仓数据写回文件
     with open(json_file, "w") as f:
         json.dump(records, f, indent=4)
 
