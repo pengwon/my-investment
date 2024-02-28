@@ -216,9 +216,9 @@ def create_trade_detail(
     trade_money = round(trade_money, 2)
     trade_fee = round(trade_fee, 2)
 
-    trade_price = get_market_data(fund_code, date)
-    if trade_price is not None:
-        trade_price = round(float(trade_price["unit_value"]), 2)
+    market_data = get_market_data(fund_code, date)
+    if market_data is not None:
+        trade_price = round(float(market_data["unit_value"]), 4)
         trade_share = round(trade_money / trade_price, 4)
     else:
         trade_price = 0
@@ -266,6 +266,69 @@ def update_trade_records(new_record: dict):
         json.dump(records, f, indent=4)
 
 
+def create_fund_detail(
+    fund_code: str, date: str, share_change: float = 0, cost_change: float = 0
+):
+    json_file = "../data/portfolio-1_change_records.json"
+    with open(json_file, "r") as f:
+        records = json.load(f)
+
+    # 获取最后一条记录
+    last_record = next(
+        (item for item in records[-1]["fund_detail"] if item["fund_code"] == fund_code),
+        None,
+    )
+    if last_record is not None:
+        # 如果存在，更新记录
+        maket_data = get_market_data(fund_code, date)
+        if maket_data is not None:
+            unit_value = round(float(maket_data["unit_value"]), 4)
+            share = round(last_record["share"] + share_change, 4)
+            cost = round(last_record["cost"] + cost_change, 4)
+            value = round(share * unit_value, 2)
+        else:
+            maket_data = 0
+            value = 0
+            share = 0
+            cost = 0
+
+    return {
+        "fund_code": fund_code,
+        "value": value,
+        "share": share,
+        "unit_value": unit_value,
+        "cost": cost,
+    }
+
+
+def create_change_record(date: str, fund_details: list):
+    json_file = "../data/portfolio-1_change_records.json"
+    with open(json_file, "r") as f:
+        records = json.load(f)
+
+    # 获取最后一条记录
+    last_record = records[-1]
+    days = (
+        datetime.strptime(date, "%Y-%m-%d")
+        - datetime.strptime(last_record["date"], "%Y-%m-%d")
+    ).days
+    fund_value_total = round(sum(detail["value"] for detail in fund_details), 2)
+    fund_cost_total = round(sum(detail["cost"] for detail in fund_details), 2)
+    balance = round(
+        last_record["balance"] * (1 + 0.02 * days / 365)
+        - fund_cost_total
+        + last_record["fund_cost_total"],
+        2,
+    )
+    return {
+        "date": date,
+        "balance": balance,
+        "fund_value_total": fund_value_total,
+        "fund_cost_total": fund_cost_total,
+        "fund_detail": fund_details,
+    }
+
+
 def update_change_records(new_record: dict):
     json_file = f"../data/portfolio-1_change_records.json"
     # 读取现有的持仓数据
@@ -309,6 +372,7 @@ def get_fund_gz_data(fund_code: str):
 def update_data():
     # 获取当前日期
     current_date = datetime.now().strftime("%Y-%m-%d")
+    # current_date = "2024-02-28"
 
     if is_trade_day(current_date):
 
@@ -324,20 +388,46 @@ def update_data():
             update_index_data(index_code, current_date)
 
         # 对于每个 fund_code，修改相应的 JSON 文件
-        trade_detail = []
+        trade_details = []
+        fund_details = []
         for fund_code in fund_codes:
             update_fund_data(fund_code, current_date)
             if is_tuesday_or_thursday(current_date):
-                trade_detail.append(
+                trade_details.append(
                     create_trade_detail(fund_code, current_date, "buy", 200, 0)
                 )
+                fund_details.append(
+                    create_fund_detail(
+                        fund_code,
+                        current_date,
+                        trade_details[-1]["trade_share"],
+                        trade_details[-1]["trade_money"]
+                        + trade_details[-1]["trade_fee"],
+                    )
+                )
             elif is_wednesday(current_date):
-                if fund_code != "014533" or fund_code != "007339":
-                    trade_detail.append(
+                if fund_code not in ["014533", "007339"]:
+                    trade_details.append(
                         create_trade_detail(fund_code, current_date, "buy", 200, 0)
                     )
+                    fund_details.append(
+                        create_fund_detail(
+                            fund_code,
+                            current_date,
+                            trade_details[-1]["trade_share"],
+                            trade_details[-1]["trade_money"]
+                            + trade_details[-1]["trade_fee"],
+                        )
+                    )
+                else:
+                    fund_details.append(create_fund_detail(fund_code, current_date))
+            else:
+                fund_details.append(create_fund_detail(fund_code, current_date))
+
         if is_tuesday_or_thursday(current_date) or is_wednesday(current_date):
-            update_trade_records(create_trade_record(current_date, trade_detail))
+            update_trade_records(create_trade_record(current_date, trade_details))
+
+        update_change_records(create_change_record(current_date, fund_details))
 
 
 if __name__ == "__main__":
