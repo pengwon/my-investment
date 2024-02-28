@@ -1,0 +1,260 @@
+[
+    {
+        "date": "2024-02-19",
+        "balance": 100000,
+        "fund_value_total": 0,
+        "fund_cost_total": 0,
+        "fund_detail": [
+            {
+                "fund_code": "007339",
+                "value": 0,
+                "share": 0,
+                "unit_value": 0,
+                "cost": 0
+            },
+            {
+                "fund_code": "007029",
+                "value": 0,
+                "share": 0,
+                "unit_value": 0,
+                "cost": 0
+            },
+            {
+                "fund_code": "011609",
+                "value": 0,
+                "share": 0,
+                "unit_value": 0,
+                "cost": 0
+            },
+            {
+                "fund_code": "017516",
+                "value": 0,
+                "share": 0,
+                "unit_value": 0,
+                "cost": 0
+            },
+            {
+                "fund_code": "014533",
+                "value": 0,
+                "share": 0,
+                "unit_value": 0,
+                "cost": 0
+            }
+        ]
+    },
+    {
+        "date": "2024-02-20",
+        "balance": 99005.48,
+        "fund_value_total": 1000.0,
+        "fund_cost_total": 1000,
+        "fund_detail": [
+            {
+                "fund_code": "007339",
+                "value": 200.0,
+                "share": 152.4158,
+                "unit_value": 1.3122,
+                "cost": 200
+            },
+            {
+                "fund_code": "007029",
+                "value": 200.0,
+                "share": 168.563,
+                "unit_value": 1.1865,
+                "cost": 200
+            },
+            {
+                "fund_code": "011609",
+                "value": 200.0,
+                "share": 334.1129,
+                "unit_value": 0.5986,
+                "cost": 200
+            },
+            {
+                "fund_code": "017516",
+                "value": 200.0,
+                "share": 229.6475,
+                "unit_value": 0.8709,
+                "cost": 200
+            },
+            {
+                "fund_code": "014533",
+                "value": 200.0,
+                "share": 279.603,
+                "unit_value": 0.7153,
+                "cost": 200
+            }
+        ]
+    },
+    {
+        "date": "2024-02-21",
+        "balance": 98410.9,
+        "fund_value_total": 1607,
+        "fund_cost_total": 1600,
+        "fund_detail": [
+            {
+                "fund_code": "007339",
+                "value": 202.56,
+                "share": 152.4158,
+                "unit_value": 1.329,
+                "cost": 200
+            },
+            {
+                "fund_code": "007029",
+                "value": 400.0,
+                "share": 337.126,
+                "unit_value": 1.1865,
+                "cost": 400
+            },
+            {
+                "fund_code": "011609",
+                "value": 400.1,
+                "share": 668.0585,
+                "unit_value": 0.5989,
+                "cost": 400
+            },
+            {
+                "fund_code": "017516",
+                "value": 400.76,
+                "share": 458.4281,
+                "unit_value": 0.8742,
+                "cost": 400
+            },
+            {
+                "fund_code": "014533",
+                "value": 202.99,
+                "share": 279.603,
+                "unit_value": 0.726,
+                "cost": 200
+            }
+        ]
+    },
+    {
+        "date": "2024-02-22",
+        "balance": 97416.29,
+        "fund_value_total": 2620,
+        "fund_cost_total": 2600,
+        "fund_detail": [
+            {
+                "fund_code": "007339",
+                "value": 404.21,
+                "share": 301.6918,
+                "unit_value": 1.3398,
+                "cost": 400
+            },
+            {
+                "fund_code": "007029",
+                "value": 602.6,
+                "share": 504.6021,
+                "unit_value": 1.1942,
+                "cost": 600
+            },
+            {
+                "fund_code": "011609",
+                "value": 603.68,
+                "share": 998.9729,
+                "unit_value": 0.6043,
+                "cost": 600
+            },
+            {
+                "fund_code": "017516",
+                "value": 604.75,
+                "share": 684.9543,
+                "unit_value": 0.8829,
+                "cost": 600
+            },
+            {
+                "fund_code": "014533",
+                "value": 404.45,
+                "share": 553.126,
+                "unit_value": 0.7312,
+                "cost": 400
+            }
+        ]
+    },
+    {
+        "date": "2024-02-23",
+        "balance": 97421.63,
+        "fund_value_total": 2623,
+        "fund_cost_total": 2600,
+        "fund_detail": [
+            {
+                "fund_code": "007339",
+                "value": 404.57,
+                "share": 301.6918,
+                "unit_value": 1.341,
+                "cost": 400
+            },
+            {
+                "fund_code": "007029",
+                "value": 605.07,
+                "share": 504.6021,
+                "unit_value": 1.1991,
+                "cost": 600
+            },
+            {
+                "fund_code": "011609",
+                "value": 605.28,
+                "share": 998.9729,
+                "unit_value": 0.6059,
+                "cost": 600
+            },
+            {
+                "fund_code": "017516",
+                "value": 602.9,
+                "share": 684.9543,
+                "unit_value": 0.8802,
+                "cost": 600
+            },
+            {
+                "fund_code": "014533",
+                "value": 404.56,
+                "share": 553.126,
+                "unit_value": 0.7314,
+                "cost": 400
+            }
+        ]
+    },
+    {
+        "date": "2024-02-26",
+        "balance": 97437.64,
+        "fund_value_total": 2612,
+        "fund_cost_total": 2600,
+        "fund_detail": [
+            {
+                "fund_code": "007339",
+                "value": 400.56,
+                "share": 301.6918,
+                "unit_value": 1.3277,
+                "cost": 400
+            },
+            {
+                "fund_code": "007029",
+                "value": 604.77,
+                "share": 504.6021,
+                "unit_value": 1.1985,
+                "cost": 600
+            },
+            {
+                "fund_code": "011609",
+                "value": 608.27,
+                "share": 998.9729,
+                "unit_value": 0.6089,
+                "cost": 600
+            },
+            {
+                "fund_code": "017516",
+                "value": 600.36,
+                "share": 684.9543,
+                "unit_value": 0.8765,
+                "cost": 600
+            },
+            {
+                "fund_code": "014533",
+                "value": 398.47,
+                "share": 553.126,
+                "unit_value": 0.7204,
+                "cost": 400
+            }
+        ]
+    }
+]
