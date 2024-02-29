@@ -113,9 +113,9 @@ def update_index_data(index_code: str, date: str, max_retries: int = 5):
                 # 如果找到了，更新数据
                 item.update(new_data)
                 break
-            else:
-                # 如果没有找到，添加新的数据
-                index_data["market_data"].append(new_data)
+        else:
+            # 如果没有找到，添加新的数据
+            index_data["market_data"].append(new_data)
 
         # 将修改后的数据写回文件
         f.seek(0)
