@@ -164,7 +164,7 @@ def update_fund_data(fund_code: str, date: str, max_retries: int = 5):
         print(
             f"The date of the fund {fund_code} data is {data_date}, current is {date}."
         )
-        print(f"Failed to update data for {fund_code} {url}.")
+        print(f"Failed to update data for {fund_code} {url} .")
         return None
 
     new_data = {"date": date, "unit_value": unit_value, "growth_rate": growth_rate}
@@ -376,38 +376,24 @@ def update_data():
     # current_date = "2024-02-28"
 
     if is_trade_day(current_date):
+        try:
+            with open("../data/portfolio-1.json", "r") as file:
+                portfolio_data = json.load(file)
 
-        with open("../data/portfolio-1.json", "r") as file:
-            portfolio_data = json.load(file)
+            # 获取 index_code 和 fund_code
+            index_codes = portfolio_data["index_code"]
+            fund_codes = portfolio_data["fund_code"]
 
-        # 获取 index_code 和 fund_code
-        index_codes = portfolio_data["index_code"]
-        fund_codes = portfolio_data["fund_code"]
+            # 对于每个 index_code，修改相应的 JSON 文件
+            for index_code in index_codes:
+                update_index_data(index_code, current_date)
 
-        # 对于每个 index_code，修改相应的 JSON 文件
-        for index_code in index_codes:
-            update_index_data(index_code, current_date)
-
-        # 对于每个 fund_code，修改相应的 JSON 文件
-        trade_details = []
-        fund_details = []
-        for fund_code in fund_codes:
-            update_fund_data(fund_code, current_date)
-            if is_tuesday_or_thursday(current_date):
-                trade_details.append(
-                    create_trade_detail(fund_code, current_date, "buy", 200, 0)
-                )
-                fund_details.append(
-                    create_fund_detail(
-                        fund_code,
-                        current_date,
-                        trade_details[-1]["trade_share"],
-                        trade_details[-1]["trade_money"]
-                        + trade_details[-1]["trade_fee"],
-                    )
-                )
-            elif is_wednesday(current_date):
-                if fund_code not in ["014533", "007339"]:
+            # 对于每个 fund_code，修改相应的 JSON 文件
+            trade_details = []
+            fund_details = []
+            for fund_code in fund_codes:
+                update_fund_data(fund_code, current_date)
+                if is_tuesday_or_thursday(current_date):
                     trade_details.append(
                         create_trade_detail(fund_code, current_date, "buy", 200, 0)
                     )
@@ -420,25 +406,66 @@ def update_data():
                             + trade_details[-1]["trade_fee"],
                         )
                     )
+                elif is_wednesday(current_date):
+                    if fund_code not in ["014533", "007339"]:
+                        trade_details.append(
+                            create_trade_detail(fund_code, current_date, "buy", 200, 0)
+                        )
+                        fund_details.append(
+                            create_fund_detail(
+                                fund_code,
+                                current_date,
+                                trade_details[-1]["trade_share"],
+                                trade_details[-1]["trade_money"]
+                                + trade_details[-1]["trade_fee"],
+                            )
+                        )
+                    else:
+                        fund_details.append(create_fund_detail(fund_code, current_date))
                 else:
                     fund_details.append(create_fund_detail(fund_code, current_date))
-            else:
-                fund_details.append(create_fund_detail(fund_code, current_date))
 
-        if is_tuesday_or_thursday(current_date) or is_wednesday(current_date):
-            update_trade_records(create_trade_record(current_date, trade_details))
+            if is_tuesday_or_thursday(current_date) or is_wednesday(current_date):
+                update_trade_records(create_trade_record(current_date, trade_details))
 
-        update_change_records(create_change_record(current_date, fund_details))
+            update_change_records(create_change_record(current_date, fund_details))
+
+            send_feishu_message_card(
+                f"{get_feishu_webhook_url()}",
+                f"{get_github_action_workflow()} #{get_github_action_run_number()}",
+                "数据更新成功!",
+            )
+
+        except Exception as e:
+            send_feishu_message_card(
+                f"{get_feishu_webhook_url()}",
+                f"{get_github_action_workflow()} #{get_github_action_run_number()}",
+                f"数据更新失败: {e}",
+                "red",
+                "danger",
+            )
 
 
 def get_github_action_run_url():
     server = os.getenv("GITHUB_SERVER_URL")
     repo = os.getenv("GITHUB_REPOSITORY")
     run_id = os.getenv("GITHUB_RUN_ID")
-    if run_id and repo:
+    if server and run_id and repo:
         return f"{server}/{repo}/actions/runs/{run_id}"
     else:
         return None
+
+
+def get_github_action_run_number():
+    return os.getenv("GITHUB_RUN_NUMBER")
+
+
+def get_github_action_workflow():
+    return os.getenv("GITHUB_WORKFLOW")
+
+
+def get_feishu_webhook_url():
+    return os.getenv("FEISHU_WEBHOOK_URL")
 
 
 def send_feishu_message_card(
@@ -481,4 +508,3 @@ def send_feishu_message_card(
 
 if __name__ == "__main__":
     update_data()
-    print(get_github_action_run_url())

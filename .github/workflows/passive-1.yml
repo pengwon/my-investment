@@ -2,7 +2,7 @@ name: Update portfolio-1 data
 
 on:
   schedule:
-    - cron: '55 12 * * 1-5'  # 每周一到周五的UTC时间12:55点（东八区时间20:55）执行
+    - cron: '55 13 * * 1-5'  # 每周一到周五的UTC时间13:55点（东八区时间21:55）执行
 
 jobs:
   build:
@@ -26,6 +26,8 @@ jobs:
       - name: Run portfolio-1.py
         run: python portfolio-1.py
         working-directory: my-investment/portfolio
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
 
       - name: Commit and push if it changed
         run: |
