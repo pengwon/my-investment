@@ -1,3 +1,4 @@
+import os
 import requests
 import json
 import time
@@ -340,5 +341,54 @@ def update_data():
             update_trade_records(create_trade_record(current_date, trade_detail))
 
 
+def get_github_action_run_url():
+    server = os.getenv("GITHUB_SERVER_URL")
+    repo = os.getenv("GITHUB_REPOSITORY")
+    run_id = os.getenv("GITHUB_RUN_ID")
+    if run_id and repo:
+        return f"{server}/{repo}/actions/runs/{run_id}"
+    else:
+        return None
+
+
+def send_feishu_message_card(
+    webhook_url: str,
+    title: str,
+    content: str,
+    title_template: str = "green",
+    button_type: str = "primary",
+):
+    headers = {"Content-Type": "application/json"}
+    data = {
+        "msg_type": "interactive",
+        "card": {
+            "header": {
+                "template": title_template,
+                "title": {"content": title, "tag": "plain_text"},
+            },
+            "elements": [
+                {
+                    "tag": "markdown",
+                    "content": content,
+                },
+                {
+                    "tag": "action",
+                    "actions": [
+                        {
+                            "tag": "button",
+                            "text": {"content": "查看详情", "tag": "plain_text"},
+                            "type": button_type,
+                            "url": get_github_action_run_url(),
+                        }
+                    ],
+                },
+            ],
+        },
+    }
+    response = requests.post(webhook_url, headers=headers, data=json.dumps(data))
+    response.raise_for_status()  # 如果请求失败，这行代码会抛出异常
+
+
 if __name__ == "__main__":
     update_data()
+    print(get_github_action_run_url())
