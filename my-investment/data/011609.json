@@ -1,1 +1,66 @@
-{"name": "\u6613\u65b9\u8fbe\u4e0a\u8bc1\u79d1\u521b50\u8054\u63a5C", "code": "011609", "market_data": [{"date": "2024-02-19", "gsz": "0.6052", "gszzl": "1.49", "gsz_time": "2024-02-19 15:00", "jzrq": "2024-02-08", "dwjz": "0.5963", "unit_value": "0.6051", "growth_rate": "1.48%"}, {"date": "2024-02-20", "unit_value": "0.5986", "growth_rate": "-1.07%"}, {"date": "2024-02-21", "unit_value": "0.5989", "growth_rate": "0.05%"}, {"date": "2024-02-22", "unit_value": "0.6043", "growth_rate": "0.90%"}, {"date": "2024-02-23", "unit_value": "0.6059", "growth_rate": "0.26%"}, {"date": "2024-02-26", "unit_value": "0.6089", "growth_rate": "0.50%"}, {"date": "2024-02-27", "unit_value": "0.6302", "growth_rate": "3.50%"}]}
+{
+    "name": "\u6613\u65b9\u8fbe\u4e0a\u8bc1\u79d1\u521b50\u8054\u63a5C",
+    "code": "011609",
+    "market_data": [
+        {
+            "date": "2024-02-19",
+            "gsz": "0.6052",
+            "gszzl": "1.49",
+            "gsz_time": "2024-02-19 15:00",
+            "jzrq": "2024-02-08",
+            "dwjz": "0.5963",
+            "unit_value": "0.6051",
+            "growth_rate": "1.48%"
+        },
+        {
+            "date": "2024-02-20",
+            "unit_value": "0.5986",
+            "growth_rate": "-1.07%"
+        },
+        {
+            "date": "2024-02-21",
+            "unit_value": "0.5989",
+            "growth_rate": "0.05%"
+        },
+        {
+            "date": "2024-02-22",
+            "unit_value": "0.6043",
+            "growth_rate": "0.90%"
+        },
+        {
+            "date": "2024-02-23",
+            "unit_value": "0.6059",
+            "growth_rate": "0.26%"
+        },
+        {
+            "date": "2024-02-26",
+            "unit_value": "0.6089",
+            "growth_rate": "0.50%"
+        },
+        {
+            "date": "2024-02-27",
+            "unit_value": "0.6302",
+            "growth_rate": "3.50%"
+        },
+        {
+            "date": "2024-02-28",
+            "unit_value": "0.6113",
+            "growth_rate": "-3.00%"
+        },
+        {
+            "date": "2024-02-29",
+            "unit_value": "0.6383",
+            "growth_rate": "4.42%"
+        },
+        {
+            "date": "2024-03-01",
+            "unit_value": "0.6442",
+            "growth_rate": "0.92%"
+        },
+        {
+            "date": "2024-03-04",
+            "unit_value": "0.6464",
+            "growth_rate": "0.34%"
+        }
+    ]
+}

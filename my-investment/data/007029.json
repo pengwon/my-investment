@@ -41,6 +41,26 @@
             "date": "2024-02-27",
             "unit_value": "1.2231",
             "growth_rate": "2.05%"
+        },
+        {
+            "date": "2024-02-28",
+            "unit_value": "1.1969",
+            "growth_rate": "-2.14%"
+        },
+        {
+            "date": "2024-02-29",
+            "unit_value": "1.2316",
+            "growth_rate": "2.90%"
+        },
+        {
+            "date": "2024-03-01",
+            "unit_value": "1.2389",
+            "growth_rate": "0.59%"
+        },
+        {
+            "date": "2024-03-04",
+            "unit_value": "1.2409",
+            "growth_rate": "0.16%"
         }
     ]
 }
