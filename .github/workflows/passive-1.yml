@@ -2,7 +2,7 @@ name: Update portfolio-1 data
 
 on:
   schedule:
-    - cron: '25 14 * * 1-5'  # 每周一到周五的UTC时间13:55（东八区时间21:55）执行
+    - cron: '55 13 * * 1-5'  # 每周一到周五的UTC时间13:55（东八区时间21:55）执行
 
 jobs:
   build:
@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -43,7 +45,7 @@ jobs:
       
       - name: Sync data to gh-pages
         run: |
-          git checkout gh-pages || git checkout -b gh-pages
+          git checkout gh-pages
           git checkout main -- my-investment/data
           git commit -m "Sync data to gh-pages"
           git push origin gh-pages
