@@ -43,7 +43,7 @@ jobs:
       
       - name: Sync data to gh-pages
         run: |
-          git checkout gh-pages
+          git checkout gh-pages || git checkout -b gh-pages
           git checkout main -- my-investment/data
           git commit -m "Sync data to gh-pages"
           git push origin gh-pages
