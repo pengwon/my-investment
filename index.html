@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Portfolio Profit Curve</title>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 </head>
+
 <body>
     <div id="profitCurve" style="width: 100%;height:600px;"></div>
     <script>
@@ -16,7 +18,9 @@
                     tooltip: {
                         trigger: 'axis',
                         formatter: function (params) {
-                            return params.map(param => `${param.seriesName}: ${parseFloat(param.value).toFixed(2)}`).join('<br/>');
+                            var date = params[0].axisValue;
+                            var tooltipItems = params.map(param => `${param.seriesName}: ${parseFloat(param.value).toFixed(2)}`);
+                            return `${date}<br/>${tooltipItems.join('<br/>')}`;
                         }
                     },
                     legend: {
@@ -62,4 +66,5 @@
             });
     </script>
 </body>
+
 </html>
