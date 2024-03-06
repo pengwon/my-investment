@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio Profit Curve</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div id="profitCurve" style="width: 100%;height:600px;"></div>
+    <script>
+        fetch('my-investment/data/portfolio-1_change_records.json')
+            .then(response => response.json())
+            .then(data => {
+                var chartDom = document.getElementById('profitCurve');
+                var myChart = echarts.init(chartDom);
+                var option = {
+                    tooltip: {
+                        trigger: 'axis',
+                        formatter: function (params) {
+                            return params.map(param => `${param.seriesName}: ${parseFloat(param.value).toFixed(2)}`).join('<br/>');
+                        }
+                    },
+                    legend: {
+                        data: ['Total Value'].concat(data[0].fund_detail.map(fund => fund.fund_code))
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    toolbox: {
+                        feature: {
+                            saveAsImage: {},
+                            dataZoom: {},
+                            restore: {}
+                        }
+                    },
+                    xAxis: {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: data.map(record => record.date)
+                    },
+                    yAxis: {
+                        type: 'value'
+                    },
+                    series: [
+                        {
+                            name: 'Total Value',
+                            type: 'line',
+                            data: data.map(record => (record.balance + record.fund_value_total).toFixed(2)),
+                            smooth: true
+                        },
+                        ...data[0].fund_detail.map((fund, index) => ({
+                            name: fund.fund_code,
+                            type: 'line',
+                            data: data.map(record => record.fund_detail[index].value.toFixed(2)),
+                            smooth: true
+                        }))
+                    ]
+                };
+                myChart.setOption(option);
+            });
+    </script>
+</body>
+</html>
