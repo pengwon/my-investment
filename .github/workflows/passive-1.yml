@@ -40,4 +40,10 @@ jobs:
             git commit -m "Update data"
             git push
           fi
-          
+      
+      - name: Sync data to gh-pages
+        run: |
+          git checkout gh-pages
+          git checkout main -- my-investment/data
+          git commit -m "Sync data to gh-pages"
+          git push origin gh-pages
