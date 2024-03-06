@@ -3,6 +3,7 @@
 
 <head>
     <title>Portfolio Profit Curve</title>
+    <meta charset="utf-8">
     <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 </head>
 
@@ -19,7 +20,16 @@
                         trigger: 'axis',
                         formatter: function (params) {
                             var date = params[0].axisValue;
-                            var tooltipItems = params.map(param => `${param.seriesName}: ${parseFloat(param.value).toFixed(2)}`);
+                            var funds = data.find(record => record.date === date).fund_detail;
+                            var tooltipItems = params.map(param => {
+                                var fund = funds.find(fund => fund.fund_code === param.seriesName);
+                                if (!fund) {
+                                    return `${param.seriesName}: ${parseFloat(param.value).toFixed(2)}`;
+                                }
+                                var cumulativePL = (parseFloat(param.value) - fund.cost).toFixed(2);
+                                var color = cumulativePL >= 0 ? 'red' : 'green';
+                                return `${param.seriesName}: ${parseFloat(param.value).toFixed(2)} (Cost: ${fund.cost}, Cumulative P&L: <span style="color: ${color};">${cumulativePL}</span>)`;
+                            });
                             return `${date}<br/>${tooltipItems.join('<br/>')}`;
                         }
                     },
