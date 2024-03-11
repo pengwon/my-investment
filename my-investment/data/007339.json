@@ -81,6 +81,11 @@
             "date": "2024-03-08",
             "unit_value": "1.3611",
             "growth_rate": "0.41%"
+        },
+        {
+            "date": "2024-03-11",
+            "unit_value": "1.3771",
+            "growth_rate": "1.18%"
         }
     ]
 }
