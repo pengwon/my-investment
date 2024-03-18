@@ -752,7 +752,7 @@
             },
             {
                 "fund_code": "011609",
-                "value": 2263.10,
+                "value": 2263.1,
                 "share": 3517.4035,
                 "unit_value": 0.6434,
                 "cost": 2200
@@ -802,7 +802,7 @@
             },
             {
                 "fund_code": "017516",
-                "value": 2350.40,
+                "value": 2350.4,
                 "share": 2708.7656,
                 "unit_value": 0.8677,
                 "cost": 2400
@@ -831,7 +831,7 @@
             },
             {
                 "fund_code": "007029",
-                "value": 2470.20,
+                "value": 2470.2,
                 "share": 1968.1261,
                 "unit_value": 1.2551,
                 "cost": 2400
@@ -855,6 +855,49 @@
                 "value": 1635.18,
                 "share": 2170.1093,
                 "unit_value": 0.7535,
+                "cost": 1600
+            }
+        ]
+    },
+    {
+        "date": "2024-03-18",
+        "balance": 89744.28,
+        "fund_value_total": 10729.88,
+        "fund_cost_total": 10400,
+        "fund_detail": [
+            {
+                "fund_code": "007339",
+                "value": 1636.03,
+                "share": 1183.5565,
+                "unit_value": 1.3823,
+                "cost": 1600
+            },
+            {
+                "fund_code": "007029",
+                "value": 2502.28,
+                "share": 1968.1261,
+                "unit_value": 1.2714,
+                "cost": 2400
+            },
+            {
+                "fund_code": "011609",
+                "value": 2494.96,
+                "share": 3831.9184,
+                "unit_value": 0.6511,
+                "cost": 2400
+            },
+            {
+                "fund_code": "017516",
+                "value": 2443.85,
+                "share": 2708.7656,
+                "unit_value": 0.9022,
+                "cost": 2400
+            },
+            {
+                "fund_code": "014533",
+                "value": 1652.76,
+                "share": 2170.1093,
+                "unit_value": 0.7616,
                 "cost": 1600
             }
         ]
