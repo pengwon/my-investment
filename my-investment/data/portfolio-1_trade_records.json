@@ -2342,5 +2342,52 @@
                 "trade_fee": 0
             }
         ]
+    },
+    {
+        "date": "2024-07-04",
+        "trade_money": 1000,
+        "trade_fee": 0,
+        "trade_detail": [
+            {
+                "fund_code": "007339",
+                "trade_type": "buy",
+                "trade_money": 200,
+                "trade_share": 149.5439,
+                "trade_price": 1.3374,
+                "trade_fee": 0
+            },
+            {
+                "fund_code": "007029",
+                "trade_type": "buy",
+                "trade_money": 200,
+                "trade_share": 176.3668,
+                "trade_price": 1.134,
+                "trade_fee": 0
+            },
+            {
+                "fund_code": "011609",
+                "trade_type": "buy",
+                "trade_money": 200,
+                "trade_share": 363.2401,
+                "trade_price": 0.5506,
+                "trade_fee": 0
+            },
+            {
+                "fund_code": "017516",
+                "trade_type": "buy",
+                "trade_money": 200,
+                "trade_share": 281.1753,
+                "trade_price": 0.7113,
+                "trade_fee": 0
+            },
+            {
+                "fund_code": "014533",
+                "trade_type": "buy",
+                "trade_money": 200,
+                "trade_share": 258.1311,
+                "trade_price": 0.7748,
+                "trade_fee": 0
+            }
+        ]
     }
 ]
