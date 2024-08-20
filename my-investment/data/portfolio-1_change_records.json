@@ -5330,5 +5330,48 @@
                 "cost": 10000
             }
         ]
+    },
+    {
+        "date": "2024-08-20",
+        "balance": 34677.13,
+        "fund_value_total": 61175.36,
+        "fund_cost_total": 66000,
+        "fund_detail": [
+            {
+                "fund_code": "007339",
+                "value": 9848.12,
+                "share": 7512.4908,
+                "unit_value": 1.3109,
+                "cost": 10200
+            },
+            {
+                "fund_code": "007029",
+                "value": 13828.93,
+                "share": 12720.9387,
+                "unit_value": 1.0871,
+                "cost": 15200
+            },
+            {
+                "fund_code": "011609",
+                "value": 14199.47,
+                "share": 25649.3371,
+                "unit_value": 0.5536,
+                "cost": 15200
+            },
+            {
+                "fund_code": "017516",
+                "value": 13319.42,
+                "share": 19396.2682,
+                "unit_value": 0.6867,
+                "cost": 15200
+            },
+            {
+                "fund_code": "014533",
+                "value": 9979.42,
+                "share": 13355.7575,
+                "unit_value": 0.7472,
+                "cost": 10200
+            }
+        ]
     }
 ]
