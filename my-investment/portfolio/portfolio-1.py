@@ -1,3 +1,4 @@
+from math import e
 import os
 import requests
 import json
@@ -291,26 +292,39 @@ def create_fund_detail(
         (item for item in records[-1]["fund_detail"] if item["fund_code"] == fund_code),
         None,
     )
+
     if last_record is not None:
         # 如果存在，更新记录
-        maket_data = get_market_data(fund_code, date)
-        if maket_data is not None:
-            unit_value = round(float(maket_data["unit_value"]), 4)
+        market_data = get_market_data(fund_code, date)
+        if market_data is not None:
+            unit_value = round(float(market_data["unit_value"]), 4)
             share = round(last_record["share"] + share_change, 4)
             cost = round(last_record["cost"] + cost_change, 4)
-            value = round(share * unit_value, 2)
         else:
-            maket_data = 0
-            value = 0
-            share = 0
-            cost = 0
+            unit_value = round(last_record["unit_value"], 4)
+            share = round(last_record["share"] + share_change, 4)
+            cost = round(last_record["cost"] + cost_change, 4)
+        value = round(share * unit_value, 2)
+        holding_earnings = round(value - cost, 2)
+        earnings = round(last_record.get("earnings", 0) + holding_earnings, 2)
+    else:
+        # 如果不存在，初始化记录
+        unit_value = 0
+        share = round(share_change, 4)
+        cost = round(cost_change, 4)
+        value = 0
+        holding_earnings = 0
+        earnings = 0
 
     return {
         "fund_code": fund_code,
-        "value": value,
+        "date": date,
         "share": share,
-        "unit_value": unit_value,
         "cost": cost,
+        "value": value,
+        "unit_value": unit_value,
+        "holding_earnings": holding_earnings,
+        "earnings": earnings,
     }
 
 
