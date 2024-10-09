@@ -1,5 +1,5 @@
 {
-    "name": "\u6caa\u6df1300\u6307\u6570",
+    "name": "沪深300指数",
     "code": "000300",
     "type": "index",
     "market_data": [
@@ -2004,6 +2004,19 @@
             "trading_volume": 589867894,
             "trading_value": 1130387437130.1,
             "turnover_rate": 1.868172488936521
+        },
+        {
+            "date": "2024-10-09",
+            "pre_close": 4256.1,
+            "open": 4168.84,
+            "high": 4197.6,
+            "low": 3942.51,
+            "close": 3955.98,
+            "change": -300.12,
+            "change_percent": -7.051526044970748,
+            "trading_volume": 482269295,
+            "trading_value": 1029032062193.4,
+            "turnover_rate": 1.5272038039226983
         }
     ]
 }

@@ -1,5 +1,5 @@
 {
-    "name": "\u6613\u65b9\u8fbe\u4e0a\u8bc1\u79d1\u521b50\u8054\u63a5C",
+    "name": "易方达上证科创50联接C",
     "code": "011609",
     "market_data": [
         {
@@ -776,6 +776,11 @@
             "date": "2024-10-08",
             "unit_value": "0.7929",
             "growth_rate": "15.62%"
+        },
+        {
+            "date": "2024-10-09",
+            "unit_value": "0.7750",
+            "growth_rate": "-2.26%"
         }
     ]
 }

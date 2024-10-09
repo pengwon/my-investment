@@ -1,5 +1,5 @@
 {
-    "name": "\u5317\u8bc150\u6307\u6570",
+    "name": "北证50指数",
     "code": "899050",
     "type": "index",
     "market_data": [
@@ -2004,6 +2004,19 @@
             "trading_volume": 25029605,
             "trading_value": 33176764001.0,
             "turnover_rate": 12.095903208090766
+        },
+        {
+            "date": "2024-10-09",
+            "pre_close": 1098.43,
+            "open": 1048.14,
+            "high": 1086.72,
+            "low": 965.37,
+            "close": 965.37,
+            "change": -133.06,
+            "change_percent": -12.11365312309387,
+            "trading_volume": 19475374,
+            "trading_value": 27490491083.0,
+            "turnover_rate": 9.408159452133598
         }
     ]
 }

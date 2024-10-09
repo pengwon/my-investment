@@ -1,5 +1,5 @@
 {
-    "name": "\u79d1\u521b50\u6307\u6570",
+    "name": "科创50指数",
     "code": "000688",
     "type": "index",
     "market_data": [
@@ -2004,6 +2004,19 @@
             "trading_volume": 81102521,
             "trading_value": 253004231361.0,
             "turnover_rate": 5.327543398482037
+        },
+        {
+            "date": "2024-10-09",
+            "pre_close": 1023.97,
+            "open": 993.78,
+            "high": 1084.68,
+            "low": 958.46,
+            "close": 997.85,
+            "change": -26.12,
+            "change_percent": -2.550855982108851,
+            "trading_volume": 74028185,
+            "trading_value": 277167646122.0,
+            "turnover_rate": 4.862721963204131
         }
     ]
 }

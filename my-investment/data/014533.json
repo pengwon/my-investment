@@ -1,5 +1,5 @@
 {
-    "name": "\u6613\u65b9\u8fbeMSCI\u4e2d\u56fdA50\u4e92\u8054\u4e92\u901aETF\u8054\u63a5C",
+    "name": "易方达MSCI中国A50互联互通ETF联接C",
     "code": "014533",
     "market_data": [
         {
@@ -761,6 +761,11 @@
             "date": "2024-10-08",
             "unit_value": "0.9327",
             "growth_rate": "4.76%"
+        },
+        {
+            "date": "2024-10-09",
+            "unit_value": "0.8717",
+            "growth_rate": "-6.54%"
         }
     ]
 }
