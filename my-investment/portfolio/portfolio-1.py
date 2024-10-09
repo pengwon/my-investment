@@ -6,6 +6,15 @@ import re
 from bs4 import BeautifulSoup
 from datetime import datetime
 
+# 基金成本基数
+FUND_COST_BASE = 20000
+# 成本技术分多少次投入
+SHARE_COUNT = 100
+# 每次投入的金额
+SHARE_MONEY = FUND_COST_BASE / SHARE_COUNT
+# 现金年化收益率
+CASH_RATE = 0.01
+
 
 def is_trade_day(date: str):
     # 读取 JSON 文件
@@ -120,7 +129,7 @@ def update_index_data(index_code: str, date: str, max_retries: int = 5):
 
         # 将修改后的数据写回文件
         f.seek(0)
-        json.dump(index_data, f, indent=4)
+        json.dump(index_data, f, ensure_ascii=False, indent=4)
         f.truncate()
 
         print(f"Data for {index_code} on {date} has been updated.")
@@ -184,7 +193,7 @@ def update_fund_data(fund_code: str, date: str, max_retries: int = 5):
             fund_data["market_data"].append(new_data)
 
         f.seek(0)
-        json.dump(fund_data, f, indent=4)
+        json.dump(fund_data, f, ensure_ascii=False, indent=4)
         f.truncate()
 
     print(f"Data for {fund_code} on {date} has been updated.")
@@ -268,7 +277,10 @@ def update_trade_records(new_record: dict):
 
 
 def create_fund_detail(
-    fund_code: str, date: str, share_change: float = 0, cost_change: float = 0
+    fund_code: str,
+    date: str,
+    share_change: float = 0,
+    cost_change: float = 0,
 ):
     json_file = "../data/portfolio-1_change_records.json"
     with open(json_file, "r") as f:
@@ -315,10 +327,18 @@ def create_change_record(date: str, fund_details: list):
     ).days
     fund_value_total = round(sum(detail["value"] for detail in fund_details), 2)
     fund_cost_total = round(sum(detail["cost"] for detail in fund_details), 2)
+    sell_value = 0
+    for detail in fund_details:
+        if detail["cost"] < 0.001:
+            for fund in last_record["fund_detail"]:
+                if fund["fund_code"] == detail["fund_code"]:
+                    sell_value += fund["value"]
+                    break
     balance = round(
-        last_record["balance"] * (1 + 0.02 * days / 365)
+        last_record["balance"] * (1 + CASH_RATE * days / 365)
         - fund_cost_total
-        + last_record["fund_cost_total"],
+        + last_record["fund_cost_total"]
+        + sell_value,
         2,
     )
     return {
@@ -370,6 +390,33 @@ def get_fund_gz_data(fund_code: str):
     return json.loads(json_text)
 
 
+def get_sell_funds():
+    with open("../data/portfolio-1_change_records.json", "r") as file:
+        change_data = json.load(file)
+
+    funds = change_data[-1]["fund_detail"]
+    sell_funds = []
+    for fund in funds:
+        if fund["cost"] < 0.001:
+            continue
+        return_rate = fund["value"] / fund["cost"]
+        cost_rate = fund["cost"] / FUND_COST_BASE
+        if (
+            (cost_rate < 0.25 and return_rate > 1.08)
+            or (cost_rate < 0.5 and return_rate > 1.1)
+            or (cost_rate < 0.75 and return_rate > 1.12)
+            or (cost_rate < 1 and return_rate > 1.15)
+            or (cost_rate < 1.5 and return_rate > 1.2)
+            or (cost_rate < 2 and return_rate > 1.25)
+            or return_rate > 1.3
+        ):
+            fund["cost_rate"] = cost_rate
+            fund["return_rate"] = return_rate
+            sell_funds.append(fund)
+
+    return sell_funds
+
+
 def update_data():
     # 获取当前日期
     current_date = datetime.now().strftime("%Y-%m-%d")
@@ -391,11 +438,35 @@ def update_data():
             # 对于每个 fund_code，修改相应的 JSON 文件
             trade_details = []
             fund_details = []
+            sell_funds = get_sell_funds()
+            if sell_funds:
+                for fund in sell_funds:
+                    update_fund_data(fund["fund_code"], current_date)
+                    trade_details.append(
+                        create_trade_detail(
+                            fund["fund_code"],
+                            current_date,
+                            "sell",
+                            fund["value"],
+                            0,
+                        )
+                    )
+                    fund_details.append(
+                        create_fund_detail(
+                            fund["fund_code"],
+                            current_date,
+                            -fund["share"],
+                            -fund["cost"],
+                        )
+                    )
+                    fund_codes.remove(fund["fund_code"])
+
             for fund_code in fund_codes:
-                update_fund_data(fund_code, current_date)
                 if is_tuesday_or_thursday(current_date):
                     trade_details.append(
-                        create_trade_detail(fund_code, current_date, "buy", 200, 0)
+                        create_trade_detail(
+                            fund_code, current_date, "buy", SHARE_MONEY, 0
+                        )
                     )
                     fund_details.append(
                         create_fund_detail(
@@ -409,7 +480,9 @@ def update_data():
                 elif is_wednesday(current_date):
                     if fund_code not in ["014533", "007339"]:
                         trade_details.append(
-                            create_trade_detail(fund_code, current_date, "buy", 200, 0)
+                            create_trade_detail(
+                                fund_code, current_date, "buy", SHARE_MONEY, 0
+                            )
                         )
                         fund_details.append(
                             create_fund_detail(
@@ -425,10 +498,24 @@ def update_data():
                 else:
                     fund_details.append(create_fund_detail(fund_code, current_date))
 
-            if is_tuesday_or_thursday(current_date) or is_wednesday(current_date):
+            if trade_details:
                 update_trade_records(create_trade_record(current_date, trade_details))
 
             update_change_records(create_change_record(current_date, fund_details))
+
+            selling_funds = get_sell_funds()
+            if selling_funds:
+                fund_messages = "\n".join(
+                    [
+                        f"基金代码: {fund['fund_code']}, 收益率: {fund['return_rate']:.2f}%, 成本比例: {fund['cost_rate']:.2f}%"
+                        for fund in selling_funds
+                    ]
+                )
+                send_feishu_message_card(
+                    f"{get_feishu_webhook_url()}",
+                    f"{get_github_action_workflow()} #{get_github_action_run_number()}",
+                    f"达到预期收益，准备卖出基金:\n{fund_messages}",
+                )
 
             send_feishu_message_card(
                 f"{get_feishu_webhook_url()}",
