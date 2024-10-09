@@ -1,5 +1,5 @@
 {
-    "name": "\u6613\u65b9\u8fbe\u6caa\u6df1300ETF\u8054\u63a5C",
+    "name": "易方达沪深300ETF联接C",
     "code": "007339",
     "market_data": [
         {
@@ -776,6 +776,11 @@
             "date": "2024-10-08",
             "unit_value": "1.6398",
             "growth_rate": "5.10%"
+        },
+        {
+            "date": "2024-10-09",
+            "unit_value": "1.5388",
+            "growth_rate": "-6.16%"
         }
     ]
 }

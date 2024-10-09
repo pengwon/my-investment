@@ -1,5 +1,5 @@
 {
-    "name": "\u4e2d\u8bc1500\u6307\u6570",
+    "name": "中证500指数",
     "code": "000905",
     "type": "index",
     "market_data": [
@@ -2017,6 +2017,19 @@
             "trading_volume": 493546420,
             "trading_value": 579263323621.8,
             "turnover_rate": 4.317534595442033
+        },
+        {
+            "date": "2024-10-09",
+            "pre_close": 6155.58,
+            "open": 6013.7,
+            "high": 6088.08,
+            "low": 5704.48,
+            "close": 5735.64,
+            "change": -419.94,
+            "change_percent": -6.822102872515669,
+            "trading_volume": 431156416,
+            "trading_value": 529447530363.7,
+            "turnover_rate": 3.7714009993165485
         }
     ]
 }
