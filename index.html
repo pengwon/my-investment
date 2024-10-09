@@ -26,9 +26,10 @@
                                 if (!fund) {
                                     return `${param.seriesName}: ${parseFloat(param.value).toFixed(2)}`;
                                 }
-                                var cumulativePL = (parseFloat(param.value) - fund.cost).toFixed(2);
+                                var cumulativePL = fund.earnings !== undefined ? fund.earnings : (parseFloat(param.value) - fund.cost).toFixed(2);
+                                var holdingEarnings = fund.hold_earnings !== undefined ? fund.hold_earnings : (parseFloat(param.value) - fund.cost).toFixed(2);
                                 var color = cumulativePL >= 0 ? 'red' : 'green';
-                                return `${param.seriesName}: ${parseFloat(param.value).toFixed(2)} (Cost: ${fund.cost}, Cumulative P&L: <span style="color: ${color};">${cumulativePL}</span>)`;
+                                return `${param.seriesName}: ${parseFloat(param.value).toFixed(2)} (Cost: ${fund.cost}, Cumulative P&L: <span style="color: ${color};">${cumulativePL}</span>, Holding Earnings: ${holdingEarnings})`;
                             });
                             return `${date}<br/>${tooltipItems.join('<br/>')}`;
                         }
