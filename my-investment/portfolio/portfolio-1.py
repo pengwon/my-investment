@@ -497,6 +497,7 @@ def update_data():
                     fund_codes.remove(fund["fund_code"])
 
             for fund_code in fund_codes:
+                update_fund_data(fund_code, current_date)
                 if is_tuesday_or_thursday(current_date):
                     trade_details.append(
                         create_trade_detail(
