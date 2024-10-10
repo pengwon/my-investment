@@ -454,8 +454,8 @@ def get_sell_funds():
 
 def update_data():
     # 获取当前日期
-    # current_date = datetime.now().strftime("%Y-%m-%d")
-    current_date = "2024-10-10"
+    current_date = datetime.now().strftime("%Y-%m-%d")
+    # current_date = "2024-10-10"
 
     if is_trade_day(current_date):
         try:
