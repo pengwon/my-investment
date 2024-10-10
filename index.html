@@ -18,7 +18,7 @@
 
                 // 基金代码和名称映射
                 var fundNames = {
-                    "000739": "易方达沪深300ETF联接C",
+                    "007339": "易方达沪深300ETF联接C",
                     "007029": "易方达中证500ETF联接C",
                     "011609": "易方达上证科创50联接C",
                     "017516": "易方达北证50成份指数C",
@@ -32,14 +32,14 @@
                             var date = params[0].axisValue;
                             var funds = data.find(record => record.date === date).fund_detail;
                             var tooltipItems = params.map(param => {
-                                var fund = funds.find(fund => fund.fund_code === param.seriesName);
+                                var fund = funds.find(fund => fund.fund_code === param.seriesName.split(' ')[0]);
                                 if (!fund) {
                                     return `${param.seriesName}: ${parseFloat(param.value).toFixed(2)}`;
                                 }
                                 var cumulativePL = fund.cumulative_earnings !== undefined ? fund.cumulative_earnings : (parseFloat(param.value) - fund.cost).toFixed(2);
                                 var holdingEarnings = fund.earnings !== undefined ? fund.earnings : (parseFloat(param.value) - fund.cost).toFixed(2);
                                 var color = cumulativePL >= 0 ? 'red' : 'green';
-                                return `${param.seriesName}: ${parseFloat(param.value).toFixed(2)} (Cost: ${fund.cost}, Cumulative P&L: <span style="color: ${color};">${cumulativePL}</span>, Holding Earnings: <span style="color: ${color};">${holdingEarnings}</span>)`;
+                                return `${fund.fund_code}: ${parseFloat(param.value).toFixed(2)} (Cost: ${fund.cost}, Cumulative P&L: <span style="color: ${color};">${cumulativePL}</span>, Holding Earnings: <span style="color: ${color};">${holdingEarnings}</span>)`;
                             });
                             return `${date}<br/>${tooltipItems.join('<br/>')}`;
                         }
@@ -65,9 +65,20 @@
                         boundaryGap: false,
                         data: data.map(record => record.date)
                     },
-                    yAxis: {
-                        type: 'value'
-                    },
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: 'Value'
+                        },
+                        {
+                            type: 'value',
+                            name: 'Return (%)',
+                            position: 'right',
+                            axisLabel: {
+                                formatter: '{value} %'
+                            }
+                        }
+                    ],
                     series: [
                         {
                             name: 'Total Value',
@@ -91,20 +102,6 @@
                             smooth: true,
                             yAxisIndex: 1
                         }))
-                    ],
-                    yAxis: [
-                        {
-                            type: 'value',
-                            name: 'Value'
-                        },
-                        {
-                            type: 'value',
-                            name: 'Return (%)',
-                            position: 'right',
-                            axisLabel: {
-                                formatter: '{value} %'
-                            }
-                        }
                     ]
                 };
                 myChart.setOption(option);
