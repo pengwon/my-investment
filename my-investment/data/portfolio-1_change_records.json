@@ -6571,8 +6571,8 @@
                 "value": 0.0,
                 "unit_value": 0.775,
                 "earnings": 0.0,
-                "cumulative_earnings": 6022.20,
-                "cumulative_cost": 6022.20
+                "cumulative_earnings": 6022.2,
+                "cumulative_cost": 6022.2
             },
             {
                 "fund_code": "017516",
@@ -6593,8 +6593,73 @@
                 "value": 0.0,
                 "unit_value": 0.8717,
                 "earnings": 0.0,
-                "cumulative_earnings": 1775.50,
-                "cumulative_cost": 1775.50
+                "cumulative_earnings": 1775.5,
+                "cumulative_cost": 1775.5
+            }
+        ]
+    },
+    {
+        "date": "2024-10-10",
+        "balance": 117163.37,
+        "fund_value_total": 1000.0,
+        "fund_cost_total": 1000.0,
+        "cumulative_fund_value_total": 18410.45,
+        "cumulative_fund_cost_total": 19383.45,
+        "fund_detail": [
+            {
+                "fund_code": "007339",
+                "date": "2024-10-10",
+                "share": 128.6753,
+                "cost": 200.0,
+                "value": 200.0,
+                "unit_value": 1.5543,
+                "earnings": 0.0,
+                "cumulative_earnings": 1724.32,
+                "cumulative_cost": 1924.32
+            },
+            {
+                "fund_code": "007029",
+                "date": "2024-10-10",
+                "share": 150.9206,
+                "cost": 200.0,
+                "value": 200.0,
+                "unit_value": 1.3252,
+                "earnings": 0.0,
+                "cumulative_earnings": 2474.86,
+                "cumulative_cost": 2647.86
+            },
+            {
+                "fund_code": "011609",
+                "date": "2024-10-10",
+                "share": 268.998,
+                "cost": 200.0,
+                "value": 200.0,
+                "unit_value": 0.7435,
+                "earnings": 0.0,
+                "cumulative_earnings": 6022.2,
+                "cumulative_cost": 6222.2
+            },
+            {
+                "fund_code": "017516",
+                "date": "2024-10-10",
+                "share": 203.4795,
+                "cost": 200.0,
+                "value": 200.0,
+                "unit_value": 0.9829,
+                "earnings": 0.0,
+                "cumulative_earnings": 5413.57,
+                "cumulative_cost": 5613.57
+            },
+            {
+                "fund_code": "014533",
+                "date": "2024-10-10",
+                "share": 225.1238,
+                "cost": 200.0,
+                "value": 200.0,
+                "unit_value": 0.8884,
+                "earnings": 0.0,
+                "cumulative_earnings": 1775.5,
+                "cumulative_cost": 1975.5
             }
         ]
     }

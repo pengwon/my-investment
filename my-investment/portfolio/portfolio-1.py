@@ -163,10 +163,10 @@ def update_fund_data(fund_code: str, date: str, max_retries: int = 5):
 
     data_date = data_item_02.find("dt").text.split(" ")[-1].strip("()")
     unit_value = data_item_02.find(
-        "span", {"class": re.compile(r"ui-font-large ui-color-(red|green) ui-num")}
+        "span", {"class": re.compile(r"ui-font-large (ui-color-(red|green) )?ui-num")}
     ).text
     growth_rate = data_item_02.find_all(
-        "span", {"class": re.compile(r"ui-font-middle ui-color-(red|green) ui-num")}
+        "span", {"class": re.compile(r"ui-font-middle (ui-color-(red|green) )?ui-num")}
     )[0].text
 
     if data_date != date:
@@ -202,7 +202,7 @@ def update_fund_data(fund_code: str, date: str, max_retries: int = 5):
 
 def load_market_data(fund_code: str):
     json_file = f"../data/{fund_code}.json"
-    with open(json_file, "r") as f:
+    with open(json_file, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -454,8 +454,8 @@ def get_sell_funds():
 
 def update_data():
     # 获取当前日期
-    current_date = datetime.now().strftime("%Y-%m-%d")
-    # current_date = "2024-02-28"
+    # current_date = datetime.now().strftime("%Y-%m-%d")
+    current_date = "2024-10-10"
 
     if is_trade_day(current_date):
         try:
