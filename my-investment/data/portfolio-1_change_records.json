@@ -6537,7 +6537,7 @@
     },
     {
         "date": "2024-10-09",
-        "balance": 119524.9,
+        "balance": 118160.13,
         "fund_value_total": 0.0,
         "fund_cost_total": 0,
         "fund_detail": [
@@ -6558,10 +6558,10 @@
                 "share": 0.0,
                 "cost": 0,
                 "value": 0.0,
-                "unit_value": 1.4226,
+                "unit_value": 1.3353,
                 "earnings": 0.0,
-                "cumulative_earnings": 3839.63,
-                "cumulative_cost": 3839.63
+                "cumulative_earnings": 2474.86,
+                "cumulative_cost": 2447.86
             },
             {
                 "fund_code": "011609",
