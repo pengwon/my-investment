@@ -297,23 +297,34 @@ def create_fund_detail(
         market_data = get_market_data(fund_code, date)
         if market_data is not None:
             unit_value = round(float(market_data["unit_value"]), 4)
-            share = round(last_record["share"] + share_change, 4)
-            cost = round(last_record["cost"] + cost_change, 4)
         else:
             unit_value = round(last_record["unit_value"], 4)
-            share = round(last_record["share"] + share_change, 4)
-            cost = round(last_record["cost"] + cost_change, 4)
+        share = round(last_record["share"] + share_change, 4)
+        cost = round(last_record["cost"] + cost_change, 4)
+        if share < 0:
+            cumulative_cost = round(
+                last_record.get("cumulative_cost", 0)
+                + last_record["cost"]
+                + share_change * unit_value,
+                4,
+            )
+        else:
+            cumulative_cost = round(
+                last_record.get("cumulative_cost", 0) + cost_change, 4
+            )
         value = round(share * unit_value, 2)
-        holding_earnings = round(value - cost, 2)
-        earnings = round(last_record.get("earnings", 0) + holding_earnings, 2)
+        earnings = round(value - cost, 2)
+        cumulative_earnings = round(
+            last_record.get("cumulative_earnings", 0) + earnings, 2
+        )
     else:
         # 如果不存在，初始化记录
         unit_value = 0
         share = round(share_change, 4)
         cost = round(cost_change, 4)
         value = 0
-        holding_earnings = 0
         earnings = 0
+        cumulative_earnings = 0
 
     return {
         "fund_code": fund_code,
@@ -322,8 +333,9 @@ def create_fund_detail(
         "cost": cost,
         "value": value,
         "unit_value": unit_value,
-        "holding_earnings": holding_earnings,
         "earnings": earnings,
+        "cumulative_earnings": cumulative_earnings,
+        "cumulative_cost": cumulative_cost,
     }
 
 
@@ -340,17 +352,25 @@ def create_change_record(date: str, fund_details: list):
     ).days
     fund_value_total = round(sum(detail["value"] for detail in fund_details), 2)
     fund_cost_total = round(sum(detail["cost"] for detail in fund_details), 2)
+    cumulative_fund_value_total = round(
+        sum(detail["cumulative_earnings"] for detail in fund_details)
+        + fund_value_total,
+        2,
+    )
+    cumulative_fund_cost_total = round(
+        sum(detail["cumulative_cost"] for detail in fund_details) + fund_cost_total,
+        2,
+    )
     sell_value = 0
     for detail in fund_details:
         if detail["cost"] < 0.001:
             for fund in last_record["fund_detail"]:
                 if fund["fund_code"] == detail["fund_code"]:
-                    sell_value += fund["value"]
+                    sell_value += detail["unit_value"] * fund["share"]
                     break
     balance = round(
         last_record["balance"] * (1 + CASH_RATE * days / 365)
         - fund_cost_total
-        + last_record["fund_cost_total"]
         + sell_value,
         2,
     )
@@ -359,6 +379,8 @@ def create_change_record(date: str, fund_details: list):
         "balance": balance,
         "fund_value_total": fund_value_total,
         "fund_cost_total": fund_cost_total,
+        "cumulative_fund_value_total": cumulative_fund_value_total,
+        "cumulative_fund_cost_total": cumulative_fund_cost_total,
         "fund_detail": fund_details,
     }
 
