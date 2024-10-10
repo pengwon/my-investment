@@ -1,5 +1,5 @@
 {
-    "name": "\u6613\u65b9\u8fbe\u4e2d\u8bc1500ETF\u8054\u63a5C",
+    "name": "易方达中证500ETF联接C",
     "code": "007029",
     "market_data": [
         {
@@ -781,6 +781,11 @@
             "date": "2024-10-09",
             "unit_value": "1.3353",
             "growth_rate": "-6.14%"
+        },
+        {
+            "date": "2024-10-10",
+            "unit_value": "1.3252",
+            "growth_rate": "-0.76%"
         }
     ]
 }
