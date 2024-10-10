@@ -6537,7 +6537,7 @@
     },
     {
         "date": "2024-10-09",
-        "balance": 205189.7,
+        "balance": 119524.9,
         "fund_value_total": 0.0,
         "fund_cost_total": 0,
         "fund_detail": [
@@ -6548,8 +6548,9 @@
                 "cost": 0,
                 "value": 0.0,
                 "unit_value": 1.5388,
-                "holding_earnings": 0.0,
-                "earnings": 0.0
+                "earnings": 0.0,
+                "cumulative_earnings": 1724.32,
+                "cumulative_cost": 1724.32
             },
             {
                 "fund_code": "007029",
@@ -6558,8 +6559,9 @@
                 "cost": 0,
                 "value": 0.0,
                 "unit_value": 1.4226,
-                "holding_earnings": 0.0,
-                "earnings": 0.0
+                "earnings": 0.0,
+                "cumulative_earnings": 3839.63,
+                "cumulative_cost": 3839.63
             },
             {
                 "fund_code": "011609",
@@ -6568,8 +6570,9 @@
                 "cost": 0,
                 "value": 0.0,
                 "unit_value": 0.775,
-                "holding_earnings": 0.0,
-                "earnings": 0.0
+                "earnings": 0.0,
+                "cumulative_earnings": 6022.20,
+                "cumulative_cost": 6022.20
             },
             {
                 "fund_code": "017516",
@@ -6578,8 +6581,9 @@
                 "cost": 0,
                 "value": 0.0,
                 "unit_value": 0.9829,
-                "holding_earnings": 0.0,
-                "earnings": 0.0
+                "earnings": 0.0,
+                "cumulative_earnings": 5413.57,
+                "cumulative_cost": 5413.57
             },
             {
                 "fund_code": "014533",
@@ -6588,8 +6592,9 @@
                 "cost": 0,
                 "value": 0.0,
                 "unit_value": 0.8717,
-                "holding_earnings": 0.0,
-                "earnings": 0.0
+                "earnings": 0.0,
+                "cumulative_earnings": 1775.50,
+                "cumulative_cost": 1775.50
             }
         ]
     }
