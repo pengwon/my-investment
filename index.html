@@ -33,19 +33,21 @@
                             var funds = data.find(record => record.date === date).fund_detail;
                             var tooltipItems = params.reduce((acc, param) => {
                                 var fundCode = param.seriesName.split(' ')[0];
-                                var fund = funds.find(fund => fund.fund_code === fundCode);
-                                if (!fund) {
-                                    acc.push(`${param.seriesName}: ${parseFloat(param.value).toFixed(2)}`);
-                                    return acc;
+                                if (!acc[fundCode]) {
+                                    var fund = funds.find(fund => fund.fund_code === fundCode);
+                                    if (fund) {
+                                        var cumulativePL = fund.cumulative_earnings !== undefined ? fund.cumulative_earnings : (fund.value - fund.cost).toFixed(2);
+                                        var holdingEarnings = fund.earnings !== undefined ? fund.earnings : (fund.value - fund.cost).toFixed(2);
+                                        var returnRate = ((fund.value - fund.cost) / fund.cost * 100).toFixed(2);
+                                        var color = returnRate >= 0 ? 'red' : 'green';
+                                        acc[fundCode] = `${fund.fund_code}: ${fund.value.toFixed(2)} (Cost: ${fund.cost}, Cumulative P&L: <span style="color: ${color};">${cumulativePL}</span>, Holding Earnings: <span style="color: ${color};">${holdingEarnings}</span>, Return: <span style="color: ${color};">${returnRate}%</span>)`;
+                                    } else {
+                                        acc[fundCode] = `${param.seriesName}: ${parseFloat(param.value).toFixed(2)}`;
+                                    }
                                 }
-                                var cumulativePL = fund.cumulative_earnings !== undefined ? fund.cumulative_earnings : (parseFloat(param.value) - fund.cost).toFixed(2);
-                                var holdingEarnings = fund.earnings !== undefined ? fund.earnings : (parseFloat(param.value) - fund.cost).toFixed(2);
-                                var returnRate = ((fund.value - fund.cost) / fund.cost * 100).toFixed(2);
-                                var color = returnRate >= 0 ? 'red' : 'green';
-                                acc.push(`${fund.fund_code}: ${parseFloat(param.value).toFixed(2)} (Cost: ${fund.cost}, Cumulative P&L: <span style="color: ${color};">${cumulativePL}</span>, Holding Earnings: <span style="color: ${color};">${holdingEarnings}</span>, Return: <span style="color: ${color};">${returnRate}%</span>)`);
                                 return acc;
-                            }, []);
-                            return `${date}<br/>${tooltipItems.join('<br/>')}`;
+                            }, {});
+                            return `${date}<br/>${Object.values(tooltipItems).join('<br/>')}`;
                         }
                     },
                     legend: {
