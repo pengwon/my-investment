@@ -15,6 +15,16 @@
             .then(data => {
                 var chartDom = document.getElementById('profitCurve');
                 var myChart = echarts.init(chartDom);
+
+                // 基金代码和名称映射
+                var fundNames = {
+                    "000739": "易方达沪深300ETF联接C",
+                    "007029": "易方达中证500ETF联接C",
+                    "011609": "易方达上证科创50联接C",
+                    "017516": "易方达北证50成份指数C",
+                    "014533": "易方达MSCI中国A50互联互通ETF联接C"
+                };
+
                 var option = {
                     tooltip: {
                         trigger: 'axis',
@@ -35,7 +45,7 @@
                         }
                     },
                     legend: {
-                        data: ['Total Value'].concat(data[0].fund_detail.map(fund => fund.fund_code))
+                        data: ['Total Value'].concat(data[0].fund_detail.map(fund => `${fund.fund_code} ${fundNames[fund.fund_code]}`))
                     },
                     grid: {
                         left: '3%',
@@ -66,11 +76,35 @@
                             smooth: true
                         },
                         ...data[0].fund_detail.map((fund, index) => ({
-                            name: fund.fund_code,
+                            name: `${fund.fund_code} ${fundNames[fund.fund_code]}`,
                             type: 'line',
                             data: data.map(record => record.fund_detail[index].value.toFixed(2)),
                             smooth: true
+                        })),
+                        ...data[0].fund_detail.map((fund, index) => ({
+                            name: `${fund.fund_code} ${fundNames[fund.fund_code]} 收益率`,
+                            type: 'line',
+                            data: data.map(record => {
+                                var fundDetail = record.fund_detail[index];
+                                return ((fundDetail.value - fundDetail.cost) / fundDetail.cost * 100).toFixed(2);
+                            }),
+                            smooth: true,
+                            yAxisIndex: 1
                         }))
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: 'Value'
+                        },
+                        {
+                            type: 'value',
+                            name: 'Return (%)',
+                            position: 'right',
+                            axisLabel: {
+                                formatter: '{value} %'
+                            }
+                        }
                     ]
                 };
                 myChart.setOption(option);
