@@ -4077,5 +4077,28 @@
                 "trade_fee": 0
             }
         ]
+    },
+    {
+        "date": "2024-10-21",
+        "trade_money": 1768.7399999999998,
+        "trade_fee": 0,
+        "trade_detail": [
+            {
+                "fund_code": "011609",
+                "trade_type": "sell",
+                "trade_money": 865.68,
+                "trade_share": 1111.9846,
+                "trade_price": 0.7785,
+                "trade_fee": 0
+            },
+            {
+                "fund_code": "017516",
+                "trade_type": "sell",
+                "trade_money": 903.06,
+                "trade_share": 713.5994,
+                "trade_price": 1.2655,
+                "trade_fee": 0
+            }
+        ]
     }
 ]
