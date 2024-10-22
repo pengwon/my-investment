@@ -6602,7 +6602,7 @@
     },
     {
         "date": "2024-10-10",
-        "balance": 118160.45,
+        "balance": 117160.0,
         "fund_value_total": 1000.0,
         "fund_cost_total": 1000.0,
         "cumulative_fund_value_total": 17410.45,
@@ -6667,7 +6667,7 @@
     },
     {
         "date": "2024-10-11",
-        "balance": 118115.22,
+        "balance": 117160.0,
         "fund_value_total": 954.77,
         "fund_cost_total": 1000.0,
         "cumulative_fund_value_total": 17365.22,
@@ -6732,7 +6732,7 @@
     },
     {
         "date": "2024-10-14",
-        "balance": 118143.62,
+        "balance": 117160.0,
         "fund_value_total": 983.17,
         "fund_cost_total": 1000.0,
         "cumulative_fund_value_total": 17393.62,
@@ -6797,7 +6797,7 @@
     },
     {
         "date": "2024-10-15",
-        "balance": 118120.81,
+        "balance": 116160.0,
         "fund_value_total": 1960.36,
         "fund_cost_total": 2000.0,
         "cumulative_fund_value_total": 17370.81,
@@ -6862,7 +6862,7 @@
     },
     {
         "date": "2024-10-16",
-        "balance": 118110.24,
+        "balance": 115560.0,
         "fund_value_total": 2549.79,
         "fund_cost_total": 2600.0,
         "cumulative_fund_value_total": 17360.24,
@@ -6927,7 +6927,7 @@
     },
     {
         "date": "2024-10-17",
-        "balance": 118124.43,
+        "balance": 114560.0,
         "fund_value_total": 3563.98,
         "fund_cost_total": 3600.0,
         "cumulative_fund_value_total": 17374.43,
@@ -6992,7 +6992,7 @@
     },
     {
         "date": "2024-10-18",
-        "balance": 118361.06,
+        "balance": 114560.0,
         "fund_value_total": 3800.61,
         "fund_cost_total": 3600.0,
         "cumulative_fund_value_total": 17611.06,
@@ -7057,7 +7057,7 @@
     },
     {
         "date": "2024-10-21",
-        "balance": 118202.62,
+        "balance": 116487.94,
         "fund_value_total": 2042.17,
         "fund_cost_total": 2000.0,
         "cumulative_fund_value_total": 17452.62,
