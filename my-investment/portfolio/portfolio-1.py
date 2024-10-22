@@ -245,7 +245,7 @@ def create_trade_detail(
 
 
 def create_trade_record(date: str, trade_details: list):
-    trade_money = sum(detail["trade_money"] for detail in trade_details)
+    trade_money = round(sum(detail["trade_money"] for detail in trade_details), 2)
     trade_fee = sum(detail["trade_fee"] for detail in trade_details)
     return {
         "date": date,
@@ -301,7 +301,7 @@ def create_fund_detail(
             unit_value = round(last_record["unit_value"], 4)
         share = round(last_record["share"] + share_change, 4)
         cost = round(last_record["cost"] + cost_change, 4)
-        if share < 0:
+        if share < 0.001:
             cumulative_cost = round(
                 last_record.get("cumulative_cost", 0)
                 + last_record["cost"]
