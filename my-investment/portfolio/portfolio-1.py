@@ -368,6 +368,7 @@ def create_change_record(date: str, fund_details: list):
     balance = round(
         last_record["balance"] * (1 + CASH_RATE * days / 365)
         - fund_cost_total
+        + last_record["fund_cost_total"]
         + sell_value,
         2,
     )
