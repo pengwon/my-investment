@@ -7122,11 +7122,11 @@
     },
     {
         "date": "2024-10-22",
-        "balance": 113491.13,
+        "balance": 115491,
         "fund_value_total": 3054.7,
         "fund_cost_total": 3000.0,
-        "cumulative_fund_value_total": 20562.02,
-        "cumulative_fund_cost_total": -11410.45,
+        "cumulative_fund_value_total": 17465.15,
+        "cumulative_fund_cost_total": -14410.45,
         "fund_detail": [
             {
                 "fund_code": "007339",
@@ -7136,7 +7136,7 @@
                 "value": 811.83,
                 "unit_value": 1.5403,
                 "earnings": 11.83,
-                "cumulative_earnings": 1744.68,
+                "cumulative_earnings": 1736.15,
                 "cumulative_cost": -924.32
             },
             {
@@ -7147,7 +7147,7 @@
                 "value": 1033.75,
                 "unit_value": 1.3385,
                 "earnings": 33.75,
-                "cumulative_earnings": 2535.63,
+                "cumulative_earnings": 2508.61,
                 "cumulative_cost": -1474.86
             },
             {
@@ -7180,7 +7180,7 @@
                 "value": 809.12,
                 "unit_value": 0.8751,
                 "earnings": 9.12,
-                "cumulative_earnings": 1791.24,
+                "cumulative_earnings": 1784.62,
                 "cumulative_cost": -975.5
             }
         ]

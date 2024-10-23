@@ -314,9 +314,7 @@ def create_fund_detail(
             )
         value = round(share * unit_value, 2)
         earnings = round(value - cost, 2)
-        cumulative_earnings = round(
-            last_record.get("cumulative_earnings", 0) + earnings, 2
-        )
+        cumulative_earnings = round(value - cumulative_cost, 2)
     else:
         # 如果不存在，初始化记录
         unit_value = 0
@@ -352,13 +350,12 @@ def create_change_record(date: str, fund_details: list):
     ).days
     fund_value_total = round(sum(detail["value"] for detail in fund_details), 2)
     fund_cost_total = round(sum(detail["cost"] for detail in fund_details), 2)
-    cumulative_fund_value_total = round(
-        sum(detail["cumulative_earnings"] for detail in fund_details)
-        + fund_value_total,
+    cumulative_fund_cost_total = round(
+        sum(detail["cumulative_cost"] for detail in fund_details),
         2,
     )
-    cumulative_fund_cost_total = round(
-        sum(detail["cumulative_cost"] for detail in fund_details) + fund_cost_total,
+    cumulative_fund_value_total = round(
+        fund_value_total - cumulative_fund_cost_total,
         2,
     )
     sell_value = 0
