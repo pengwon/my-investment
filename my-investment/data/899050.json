@@ -2238,6 +2238,19 @@
             "trading_volume": 21883982,
             "trading_value": 37918044155.0,
             "turnover_rate": 10.183640920379375
+        },
+        {
+            "date": "2024-11-04",
+            "pre_close": 1144.9,
+            "open": 1146.1,
+            "high": 1216.76,
+            "low": 1146.1,
+            "close": 1216.76,
+            "change": 71.86,
+            "change_percent": 6.276530701371298,
+            "trading_volume": 18012114,
+            "trading_value": 29990832520.0,
+            "turnover_rate": 8.381255519286707
         }
     ]
 }
