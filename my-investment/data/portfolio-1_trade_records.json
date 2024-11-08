@@ -4475,5 +4475,20 @@
                 "trade_fee": 0
             }
         ]
+    },
+    {
+        "date": "2024-11-08",
+        "trade_money": 1964.57,
+        "trade_fee": 0,
+        "trade_detail": [
+            {
+                "fund_code": "017516",
+                "trade_type": "sell",
+                "trade_money": 1964.57,
+                "trade_share": 1414.0718,
+                "trade_price": 1.3893,
+                "trade_fee": 0
+            }
+        ]
     }
 ]
