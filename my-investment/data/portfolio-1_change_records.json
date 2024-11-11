@@ -7122,11 +7122,11 @@
     },
     {
         "date": "2024-10-22",
-        "balance": 115491,
+        "balance": 115488.0,
         "fund_value_total": 3054.7,
         "fund_cost_total": 3000.0,
-        "cumulative_fund_value_total": 17465.15,
-        "cumulative_fund_cost_total": -14410.45,
+        "cumulative_fund_value_total": 17793.09,
+        "cumulative_fund_cost_total": -14738.39,
         "fund_detail": [
             {
                 "fund_code": "007339",
@@ -7158,8 +7158,8 @@
                 "value": 200.0,
                 "unit_value": 0.7673,
                 "earnings": 0.0,
-                "cumulative_earnings": 6022.2,
-                "cumulative_cost": -5822.2
+                "cumulative_earnings": 6106.28,
+                "cumulative_cost": -5906.28
             },
             {
                 "fund_code": "017516",
@@ -7169,8 +7169,8 @@
                 "value": 200.0,
                 "unit_value": 1.1702,
                 "earnings": 0.0,
-                "cumulative_earnings": 5413.57,
-                "cumulative_cost": -5213.57
+                "cumulative_earnings": 5657.43,
+                "cumulative_cost": -5457.43
             },
             {
                 "fund_code": "014533",
@@ -7187,11 +7187,11 @@
     },
     {
         "date": "2024-10-23",
-        "balance": 114894.16,
+        "balance": 114888.0,
         "fund_value_total": 3668.87,
         "fund_cost_total": 3600.0,
-        "cumulative_fund_value_total": 17479.32,
-        "cumulative_fund_cost_total": -13810.45,
+        "cumulative_fund_value_total": 17807.26,
+        "cumulative_fund_cost_total": -14138.39,
         "fund_detail": [
             {
                 "fund_code": "007339",
@@ -7223,8 +7223,8 @@
                 "value": 398.72,
                 "unit_value": 0.7624,
                 "earnings": -1.28,
-                "cumulative_earnings": 6020.92,
-                "cumulative_cost": -5622.2
+                "cumulative_earnings": 6105.0,
+                "cumulative_cost": -5706.28
             },
             {
                 "fund_code": "017516",
@@ -7234,8 +7234,8 @@
                 "value": 408.1,
                 "unit_value": 1.2176,
                 "earnings": 8.1,
-                "cumulative_earnings": 5421.67,
-                "cumulative_cost": -5013.57
+                "cumulative_earnings": 5665.53,
+                "cumulative_cost": -5257.43
             },
             {
                 "fund_code": "014533",
@@ -7252,11 +7252,11 @@
     },
     {
         "date": "2024-10-24",
-        "balance": 113897.31,
+        "balance": 113888.0,
         "fund_value_total": 4655.93,
         "fund_cost_total": 4600.0,
-        "cumulative_fund_value_total": 17466.38,
-        "cumulative_fund_cost_total": -12810.45,
+        "cumulative_fund_value_total": 17794.32,
+        "cumulative_fund_cost_total": -13138.39,
         "fund_detail": [
             {
                 "fund_code": "007339",
@@ -7288,8 +7288,8 @@
                 "value": 598.15,
                 "unit_value": 0.7613,
                 "earnings": -1.85,
-                "cumulative_earnings": 6020.35,
-                "cumulative_cost": -5422.2
+                "cumulative_earnings": 6104.43,
+                "cumulative_cost": -5506.28
             },
             {
                 "fund_code": "017516",
@@ -7299,8 +7299,8 @@
                 "value": 623.75,
                 "unit_value": 1.2643,
                 "earnings": 23.75,
-                "cumulative_earnings": 5437.32,
-                "cumulative_cost": -4813.57
+                "cumulative_earnings": 5681.18,
+                "cumulative_cost": -5057.43
             },
             {
                 "fund_code": "014533",
@@ -7317,11 +7317,11 @@
     },
     {
         "date": "2024-10-25",
-        "balance": 113900.43,
+        "balance": 113888.0,
         "fund_value_total": 4692.81,
         "fund_cost_total": 4600.0,
-        "cumulative_fund_value_total": 17503.26,
-        "cumulative_fund_cost_total": -12810.45,
+        "cumulative_fund_value_total": 17831.2,
+        "cumulative_fund_cost_total": -13138.39,
         "fund_detail": [
             {
                 "fund_code": "007339",
@@ -7353,8 +7353,8 @@
                 "value": 606.08,
                 "unit_value": 0.7714,
                 "earnings": 6.08,
-                "cumulative_earnings": 6028.28,
-                "cumulative_cost": -5422.2
+                "cumulative_earnings": 6112.36,
+                "cumulative_cost": -5506.28
             },
             {
                 "fund_code": "017516",
@@ -7364,8 +7364,8 @@
                 "value": 624.25,
                 "unit_value": 1.2653,
                 "earnings": 24.25,
-                "cumulative_earnings": 5437.82,
-                "cumulative_cost": -4813.57
+                "cumulative_earnings": 5681.68,
+                "cumulative_cost": -5057.43
             },
             {
                 "fund_code": "014533",
@@ -7382,11 +7382,11 @@
     },
     {
         "date": "2024-10-28",
-        "balance": 113909.79,
+        "balance": 113888.0,
         "fund_value_total": 4715.04,
         "fund_cost_total": 4600.0,
-        "cumulative_fund_value_total": 17525.49,
-        "cumulative_fund_cost_total": -12810.45,
+        "cumulative_fund_value_total": 17853.43,
+        "cumulative_fund_cost_total": -13138.39,
         "fund_detail": [
             {
                 "fund_code": "007339",
@@ -7418,8 +7418,8 @@
                 "value": 603.33,
                 "unit_value": 0.7679,
                 "earnings": 3.33,
-                "cumulative_earnings": 6025.53,
-                "cumulative_cost": -5422.2
+                "cumulative_earnings": 6109.61,
+                "cumulative_cost": -5506.28
             },
             {
                 "fund_code": "017516",
@@ -7429,8 +7429,8 @@
                 "value": 629.67,
                 "unit_value": 1.2763,
                 "earnings": 29.67,
-                "cumulative_earnings": 5443.24,
-                "cumulative_cost": -4813.57
+                "cumulative_earnings": 5687.1,
+                "cumulative_cost": -5057.43
             },
             {
                 "fund_code": "014533",
@@ -7447,11 +7447,11 @@
     },
     {
         "date": "2024-10-29",
-        "balance": 112912.91,
+        "balance": 112888.0,
         "fund_value_total": 5697.74,
         "fund_cost_total": 5600.0,
-        "cumulative_fund_value_total": 17508.19,
-        "cumulative_fund_cost_total": -11810.45,
+        "cumulative_fund_value_total": 17836.13,
+        "cumulative_fund_cost_total": -12138.39,
         "fund_detail": [
             {
                 "fund_code": "007339",
@@ -7483,8 +7483,8 @@
                 "value": 796.89,
                 "unit_value": 0.7597,
                 "earnings": -3.11,
-                "cumulative_earnings": 6019.09,
-                "cumulative_cost": -5222.2
+                "cumulative_earnings": 6103.17,
+                "cumulative_cost": -5306.28
             },
             {
                 "fund_code": "017516",
@@ -7494,8 +7494,8 @@
                 "value": 851.43,
                 "unit_value": 1.3204,
                 "earnings": 51.43,
-                "cumulative_earnings": 5465.0,
-                "cumulative_cost": -4613.57
+                "cumulative_earnings": 5708.86,
+                "cumulative_cost": -4857.43
             },
             {
                 "fund_code": "014533",
@@ -7512,11 +7512,11 @@
     },
     {
         "date": "2024-10-30",
-        "balance": 112316.0,
+        "balance": 112288.0,
         "fund_value_total": 6255.41,
         "fund_cost_total": 6200.0,
-        "cumulative_fund_value_total": 17465.86,
-        "cumulative_fund_cost_total": -11210.45,
+        "cumulative_fund_value_total": 17793.8,
+        "cumulative_fund_cost_total": -11538.39,
         "fund_detail": [
             {
                 "fund_code": "007339",
@@ -7548,8 +7548,8 @@
                 "value": 984.51,
                 "unit_value": 0.7479,
                 "earnings": -15.49,
-                "cumulative_earnings": 6006.71,
-                "cumulative_cost": -5022.2
+                "cumulative_earnings": 6090.79,
+                "cumulative_cost": -5106.28
             },
             {
                 "fund_code": "017516",
@@ -7559,8 +7559,8 @@
                 "value": 1034.09,
                 "unit_value": 1.2935,
                 "earnings": 34.09,
-                "cumulative_earnings": 5447.66,
-                "cumulative_cost": -4413.57
+                "cumulative_earnings": 5691.52,
+                "cumulative_cost": -4657.43
             },
             {
                 "fund_code": "014533",
@@ -7577,11 +7577,11 @@
     },
     {
         "date": "2024-10-31",
-        "balance": 111319.08,
+        "balance": 111288.0,
         "fund_value_total": 7261.57,
         "fund_cost_total": 7200.0,
-        "cumulative_fund_value_total": 17472.02,
-        "cumulative_fund_cost_total": -10210.45,
+        "cumulative_fund_value_total": 17799.96,
+        "cumulative_fund_cost_total": -10538.39,
         "fund_detail": [
             {
                 "fund_code": "007339",
@@ -7613,8 +7613,8 @@
                 "value": 1194.39,
                 "unit_value": 0.7554,
                 "earnings": -5.61,
-                "cumulative_earnings": 6016.59,
-                "cumulative_cost": -4822.2
+                "cumulative_earnings": 6100.67,
+                "cumulative_cost": -4906.28
             },
             {
                 "fund_code": "017516",
@@ -7624,8 +7624,8 @@
                 "value": 1218.18,
                 "unit_value": 1.2736,
                 "earnings": 18.18,
-                "cumulative_earnings": 5431.75,
-                "cumulative_cost": -4213.57
+                "cumulative_earnings": 5675.61,
+                "cumulative_cost": -4457.43
             },
             {
                 "fund_code": "014533",
@@ -7642,11 +7642,11 @@
     },
     {
         "date": "2024-11-01",
-        "balance": 111322.13,
+        "balance": 111288.0,
         "fund_value_total": 7100.58,
         "fund_cost_total": 7200.0,
-        "cumulative_fund_value_total": 17311.03,
-        "cumulative_fund_cost_total": -10210.45,
+        "cumulative_fund_value_total": 17638.97,
+        "cumulative_fund_cost_total": -10538.39,
         "fund_detail": [
             {
                 "fund_code": "007339",
@@ -7678,8 +7678,8 @@
                 "value": 1159.76,
                 "unit_value": 0.7335,
                 "earnings": -40.24,
-                "cumulative_earnings": 5981.96,
-                "cumulative_cost": -4822.2
+                "cumulative_earnings": 6066.04,
+                "cumulative_cost": -4906.28
             },
             {
                 "fund_code": "017516",
@@ -7689,8 +7689,8 @@
                 "value": 1108.28,
                 "unit_value": 1.1587,
                 "earnings": -91.72,
-                "cumulative_earnings": 5321.85,
-                "cumulative_cost": -4213.57
+                "cumulative_earnings": 5565.71,
+                "cumulative_cost": -4457.43
             },
             {
                 "fund_code": "014533",
@@ -7707,11 +7707,11 @@
     },
     {
         "date": "2024-11-04",
-        "balance": 111331.28,
+        "balance": 111288.0,
         "fund_value_total": 7247.64,
         "fund_cost_total": 7200.0,
-        "cumulative_fund_value_total": 17458.09,
-        "cumulative_fund_cost_total": -10210.45,
+        "cumulative_fund_value_total": 17786.03,
+        "cumulative_fund_cost_total": -10538.39,
         "fund_detail": [
             {
                 "fund_code": "007339",
@@ -7743,8 +7743,8 @@
                 "value": 1177.15,
                 "unit_value": 0.7445,
                 "earnings": -22.85,
-                "cumulative_earnings": 5999.35,
-                "cumulative_cost": -4822.2
+                "cumulative_earnings": 6083.43,
+                "cumulative_cost": -4906.28
             },
             {
                 "fund_code": "017516",
@@ -7754,8 +7754,8 @@
                 "value": 1172.17,
                 "unit_value": 1.2255,
                 "earnings": -27.83,
-                "cumulative_earnings": 5385.74,
-                "cumulative_cost": -4213.57
+                "cumulative_earnings": 5629.6,
+                "cumulative_cost": -4457.43
             },
             {
                 "fund_code": "014533",
@@ -7772,11 +7772,11 @@
     },
     {
         "date": "2024-11-05",
-        "balance": 110334.33,
+        "balance": 110288.0,
         "fund_value_total": 8504.79,
         "fund_cost_total": 8200.0,
-        "cumulative_fund_value_total": 17715.24,
-        "cumulative_fund_cost_total": -9210.45,
+        "cumulative_fund_value_total": 18043.18,
+        "cumulative_fund_cost_total": -9538.39,
         "fund_detail": [
             {
                 "fund_code": "007339",
@@ -7808,8 +7808,8 @@
                 "value": 1425.69,
                 "unit_value": 0.7752,
                 "earnings": 25.69,
-                "cumulative_earnings": 6047.89,
-                "cumulative_cost": -4622.2
+                "cumulative_earnings": 6131.97,
+                "cumulative_cost": -4706.28
             },
             {
                 "fund_code": "017516",
@@ -7819,8 +7819,8 @@
                 "value": 1460.36,
                 "unit_value": 1.3177,
                 "earnings": 60.36,
-                "cumulative_earnings": 5473.93,
-                "cumulative_cost": -4013.57
+                "cumulative_earnings": 5717.79,
+                "cumulative_cost": -4257.43
             },
             {
                 "fund_code": "014533",
@@ -7837,11 +7837,11 @@
     },
     {
         "date": "2024-11-06",
-        "balance": 109737.35,
+        "balance": 109688.0,
         "fund_value_total": 9135.18,
         "fund_cost_total": 8800.0,
-        "cumulative_fund_value_total": 17745.63,
-        "cumulative_fund_cost_total": -8610.45,
+        "cumulative_fund_value_total": 18073.57,
+        "cumulative_fund_cost_total": -8938.39,
         "fund_detail": [
             {
                 "fund_code": "007339",
@@ -7873,8 +7873,8 @@
                 "value": 1628.27,
                 "unit_value": 0.7766,
                 "earnings": 28.27,
-                "cumulative_earnings": 6050.47,
-                "cumulative_cost": -4422.2
+                "cumulative_earnings": 6134.55,
+                "cumulative_cost": -4506.28
             },
             {
                 "fund_code": "017516",
@@ -7884,8 +7884,8 @@
                 "value": 1709.34,
                 "unit_value": 1.3619,
                 "earnings": 109.34,
-                "cumulative_earnings": 5522.91,
-                "cumulative_cost": -3813.57
+                "cumulative_earnings": 5766.77,
+                "cumulative_cost": -4057.43
             },
             {
                 "fund_code": "014533",
@@ -7902,11 +7902,11 @@
     },
     {
         "date": "2024-11-07",
-        "balance": 108740.36,
+        "balance": 108688.0,
         "fund_value_total": 10372.32,
         "fund_cost_total": 9800.0,
-        "cumulative_fund_value_total": 17982.77,
-        "cumulative_fund_cost_total": -7610.45,
+        "cumulative_fund_value_total": 18310.71,
+        "cumulative_fund_cost_total": -7938.39,
         "fund_detail": [
             {
                 "fund_code": "007339",
@@ -7938,8 +7938,8 @@
                 "value": 1874.18,
                 "unit_value": 0.7985,
                 "earnings": 74.18,
-                "cumulative_earnings": 6096.38,
-                "cumulative_cost": -4222.2
+                "cumulative_earnings": 6180.46,
+                "cumulative_cost": -4306.28
             },
             {
                 "fund_code": "017516",
@@ -7949,8 +7949,8 @@
                 "value": 1964.57,
                 "unit_value": 1.4059,
                 "earnings": 164.57,
-                "cumulative_earnings": 5578.14,
-                "cumulative_cost": -3613.57
+                "cumulative_earnings": 5822.0,
+                "cumulative_cost": -3857.43
             },
             {
                 "fund_code": "014533",
@@ -7967,11 +7967,11 @@
     },
     {
         "date": "2024-11-08",
-        "balance": 112484.71,
+        "balance": 110629.37,
         "fund_value_total": 8359.17,
         "fund_cost_total": 8000.0,
-        "cumulative_fund_value_total": 17910.99,
-        "cumulative_fund_cost_total": -9551.82,
+        "cumulative_fund_value_total": 17790.08,
+        "cumulative_fund_cost_total": -9430.91,
         "fund_detail": [
             {
                 "fund_code": "017516",
@@ -7981,8 +7981,8 @@
                 "value": 0.0,
                 "unit_value": 1.3893,
                 "earnings": 0.0,
-                "cumulative_earnings": 5554.94,
-                "cumulative_cost": -5554.94
+                "cumulative_earnings": 5798.8,
+                "cumulative_cost": -5798.8
             },
             {
                 "fund_code": "007339",
@@ -8014,8 +8014,8 @@
                 "value": 1869.02,
                 "unit_value": 0.7963,
                 "earnings": 69.02,
-                "cumulative_earnings": 6091.22,
-                "cumulative_cost": -4222.2
+                "cumulative_earnings": 5726.45,
+                "cumulative_cost": -3857.43
             },
             {
                 "fund_code": "014533",
