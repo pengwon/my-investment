@@ -303,10 +303,8 @@ def create_fund_detail(
         cost = round(last_record["cost"] + cost_change, 4)
         if share < 0.001:
             cumulative_cost = round(
-                last_record.get("cumulative_cost", 0)
-                + last_record["cost"]
-                + share_change * unit_value,
-                4,
+                last_record.get("cumulative_cost", 0) + share_change * unit_value,
+                2,
             )
         else:
             cumulative_cost = round(
