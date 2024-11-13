@@ -357,16 +357,19 @@ def create_change_record(date: str, fund_details: list):
         2,
     )
     sell_value = 0
+    sell_cost = 0
     for detail in fund_details:
         if detail["cost"] < 0.001:
             for fund in last_record["fund_detail"]:
                 if fund["fund_code"] == detail["fund_code"]:
                     sell_value += detail["unit_value"] * fund["share"]
+                    sell_cost += fund["cost"]
                     break
     balance = round(
         last_record["balance"] * (1 + CASH_RATE * days / 365)
         - fund_cost_total
         + last_record["fund_cost_total"]
+        - sell_cost
         + sell_value,
         2,
     )
