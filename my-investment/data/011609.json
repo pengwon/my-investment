@@ -901,6 +901,171 @@
             "date": "2024-11-12",
             "unit_value": "0.8148",
             "growth_rate": "-2.07%"
+        },
+        {
+            "date": "2024-11-13",
+            "unit_value": "0.8227",
+            "growth_rate": "0.97%"
+        },
+        {
+            "date": "2024-11-14",
+            "unit_value": "0.7976",
+            "growth_rate": "-3.05%"
+        },
+        {
+            "date": "2024-11-15",
+            "unit_value": "0.7673",
+            "growth_rate": "-3.80%"
+        },
+        {
+            "date": "2024-11-18",
+            "unit_value": "0.7540",
+            "growth_rate": "-1.73%"
+        },
+        {
+            "date": "2024-11-19",
+            "unit_value": "0.7755",
+            "growth_rate": "2.85%"
+        },
+        {
+            "date": "2024-11-20",
+            "unit_value": "0.7789",
+            "growth_rate": "0.44%"
+        },
+        {
+            "date": "2024-11-21",
+            "unit_value": "0.7858",
+            "growth_rate": "0.89%"
+        },
+        {
+            "date": "2024-11-22",
+            "unit_value": "0.7549",
+            "growth_rate": "-3.93%"
+        },
+        {
+            "date": "2024-11-25",
+            "unit_value": "0.7464",
+            "growth_rate": "-1.13%"
+        },
+        {
+            "date": "2024-11-26",
+            "unit_value": "0.7418",
+            "growth_rate": "-0.62%"
+        },
+        {
+            "date": "2024-11-27",
+            "unit_value": "0.7671",
+            "growth_rate": "3.41%"
+        },
+        {
+            "date": "2024-11-28",
+            "unit_value": "0.7654",
+            "growth_rate": "-0.22%"
+        },
+        {
+            "date": "2024-11-29",
+            "unit_value": "0.7829",
+            "growth_rate": "2.29%"
+        },
+        {
+            "date": "2024-12-02",
+            "unit_value": "0.7891",
+            "growth_rate": "0.79%"
+        },
+        {
+            "date": "2024-12-03",
+            "unit_value": "0.7813",
+            "growth_rate": "-0.99%"
+        },
+        {
+            "date": "2024-12-04",
+            "unit_value": "0.7769",
+            "growth_rate": "-0.56%"
+        },
+        {
+            "date": "2024-12-05",
+            "unit_value": "0.7788",
+            "growth_rate": "0.24%"
+        },
+        {
+            "date": "2024-12-06",
+            "unit_value": "0.7880",
+            "growth_rate": "1.18%"
+        },
+        {
+            "date": "2024-12-09",
+            "unit_value": "0.7800",
+            "growth_rate": "-1.02%"
+        },
+        {
+            "date": "2024-12-10",
+            "unit_value": "0.7853",
+            "growth_rate": "0.68%"
+        },
+        {
+            "date": "2024-12-11",
+            "unit_value": "0.7827",
+            "growth_rate": "-0.33%"
+        },
+        {
+            "date": "2024-12-12",
+            "unit_value": "0.7854",
+            "growth_rate": "0.34%"
+        },
+        {
+            "date": "2024-12-13",
+            "unit_value": "0.7700",
+            "growth_rate": "-1.96%"
+        },
+        {
+            "date": "2024-12-16",
+            "unit_value": "0.7593",
+            "growth_rate": "-1.39%"
+        },
+        {
+            "date": "2024-12-17",
+            "unit_value": "0.7535",
+            "growth_rate": "-0.76%"
+        },
+        {
+            "date": "2024-12-18",
+            "unit_value": "0.7640",
+            "growth_rate": "1.39%"
+        },
+        {
+            "date": "2024-12-19",
+            "unit_value": "0.7724",
+            "growth_rate": "1.10%"
+        },
+        {
+            "date": "2024-12-20",
+            "unit_value": "0.7860",
+            "growth_rate": "1.76%"
+        },
+        {
+            "date": "2024-12-23",
+            "unit_value": "0.7767",
+            "growth_rate": "-1.18%"
+        },
+        {
+            "date": "2024-12-24",
+            "unit_value": "0.7880",
+            "growth_rate": "1.45%"
+        },
+        {
+            "date": "2024-12-25",
+            "unit_value": "0.7905",
+            "growth_rate": "0.32%"
+        },
+        {
+            "date": "2024-12-26",
+            "unit_value": "0.7976",
+            "growth_rate": "0.90%"
+        },
+        {
+            "date": "2024-12-27",
+            "unit_value": "0.7914",
+            "growth_rate": "-0.78%"
         }
     ]
 }
