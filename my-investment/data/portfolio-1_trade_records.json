@@ -6162,5 +6162,20 @@
                 "trade_fee": 0
             }
         ]
+    },
+    {
+        "date": "2025-02-24",
+        "trade_money": 9011.28,
+        "trade_fee": 0,
+        "trade_detail": [
+            {
+                "fund_code": "017516",
+                "trade_type": "sell",
+                "trade_money": 9011.28,
+                "trade_share": 6653.3373,
+                "trade_price": 1.3544,
+                "trade_fee": 0
+            }
+        ]
     }
 ]
