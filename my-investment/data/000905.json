@@ -4708,6 +4708,19 @@
             "trading_volume": 168351918,
             "trading_value": 290495345645.2,
             "turnover_rate": 1.499528118172058
+        },
+        {
+            "date": "2025-08-13",
+            "pre_close": 6418.16,
+            "open": 6422.79,
+            "high": 6514.46,
+            "low": 6422.21,
+            "close": 6508.1,
+            "change": 89.94,
+            "change_percent": 1.4013362085083576,
+            "trading_volume": 216022423,
+            "trading_value": 353506820818.3,
+            "turnover_rate": 1.9241342854446022
         }
     ]
 }
