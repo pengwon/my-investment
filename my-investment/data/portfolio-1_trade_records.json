@@ -9474,5 +9474,20 @@
                 "trade_fee": 0
             }
         ]
+    },
+    {
+        "date": "2025-09-01",
+        "trade_money": 20486.63,
+        "trade_fee": 0,
+        "trade_detail": [
+            {
+                "fund_code": "007339",
+                "trade_type": "sell",
+                "trade_money": 20486.63,
+                "trade_share": 11470.6775,
+                "trade_price": 1.786,
+                "trade_fee": 0
+            }
+        ]
     }
 ]
