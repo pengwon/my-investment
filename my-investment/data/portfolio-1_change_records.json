@@ -21224,5 +21224,70 @@
                 "cumulative_cost": -4098.43
             }
         ]
+    },
+    {
+        "date": "2025-09-09",
+        "balance": 130386.76,
+        "fund_value_total": 5203.75,
+        "fund_cost_total": 5200.0,
+        "cumulative_fund_value_total": 33729.28,
+        "cumulative_fund_cost_total": -28525.53,
+        "fund_detail": [
+            {
+                "fund_code": "007339",
+                "date": "2025-09-09",
+                "share": 342.69,
+                "cost": 600.0,
+                "value": 600.84,
+                "unit_value": 1.7533,
+                "earnings": 0.84,
+                "cumulative_earnings": 4527.14,
+                "cumulative_cost": -3926.3
+            },
+            {
+                "fund_code": "007029",
+                "date": "2025-09-09",
+                "share": 374.829,
+                "cost": 600.0,
+                "value": 608.16,
+                "unit_value": 1.6225,
+                "earnings": 8.16,
+                "cumulative_earnings": 7012.19,
+                "cumulative_cost": -6404.03
+            },
+            {
+                "fund_code": "011609",
+                "date": "2025-09-09",
+                "share": 1416.692,
+                "cost": 1400.0,
+                "value": 1356.48,
+                "unit_value": 0.9575,
+                "earnings": -43.52,
+                "cumulative_earnings": 8462.69,
+                "cumulative_cost": -7106.21
+            },
+            {
+                "fund_code": "017516",
+                "date": "2025-09-09",
+                "share": 1139.485,
+                "cost": 1800.0,
+                "value": 1840.15,
+                "unit_value": 1.6149,
+                "earnings": 40.15,
+                "cumulative_earnings": 9030.71,
+                "cumulative_cost": -7190.56
+            },
+            {
+                "fund_code": "014533",
+                "date": "2025-09-09",
+                "share": 796.2044,
+                "cost": 800.0,
+                "value": 798.12,
+                "unit_value": 1.0024,
+                "earnings": -1.88,
+                "cumulative_earnings": 4696.55,
+                "cumulative_cost": -3898.43
+            }
+        ]
     }
 ]
