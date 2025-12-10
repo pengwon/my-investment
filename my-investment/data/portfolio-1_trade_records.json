@@ -11130,5 +11130,36 @@
                 "trade_fee": 0
             }
         ]
+    },
+    {
+        "date": "2025-12-10",
+        "trade_money": 600.0,
+        "trade_fee": 0,
+        "trade_detail": [
+            {
+                "fund_code": "007029",
+                "trade_type": "buy",
+                "trade_money": 200.0,
+                "trade_share": 118.7578,
+                "trade_price": 1.6841,
+                "trade_fee": 0
+            },
+            {
+                "fund_code": "011609",
+                "trade_type": "buy",
+                "trade_money": 200.0,
+                "trade_share": 193.4797,
+                "trade_price": 1.0337,
+                "trade_fee": 0
+            },
+            {
+                "fund_code": "017516",
+                "trade_type": "buy",
+                "trade_money": 200.0,
+                "trade_share": 142.9184,
+                "trade_price": 1.3994,
+                "trade_fee": 0
+            }
+        ]
     }
 ]
